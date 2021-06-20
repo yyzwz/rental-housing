@@ -1,0 +1,79 @@
+<!-- 郑为中 -->
+<!-- 子界面  用于房东提交自己的房间 -->
+<view class='page'>
+  <view class="weui-form">
+      <view class="weui-form__text-area">
+        <h2 class="weui-form__title">添加房间</h2>
+        <view class="weui-form__desc">请您如实填写房间的相关信息</view>
+      </view>
+
+      <view class="weui-form__control-area">
+			 <view class="weui-cells__group weui-cells__group_form">
+				  <view class="weui-cells__title">请如实填写下列信息</view>
+
+            <!-- 开始 -->
+            <view class="weui-cell weui-cell_active">
+              <view class="weui-cell__hd"><label class="weui-label">房间名称</label></view>
+                <view class="weui-cell__bd">
+                <input class="weui-input" placeholder="请填写房间名称" bindblur="roomName" value="{{roomName}}" placeholder-class="weui-input__placeholder"/>
+                </view>
+            </view>
+            <!-- 结尾 -->
+            <!-- 开始 -->
+            <view class="weui-cell weui-cell_active">
+              <view class="weui-cell__hd"><label class="weui-label">房间面积</label></view>
+                <view class="weui-cell__bd">
+                  <input class="weui-input" placeholder="请填写房屋的面积" placeholder-class="weui-input__placeholder" bindblur="roomSize" value="{{roomSize}}" />
+                </view>
+            </view>
+            <!-- 结尾 -->
+            <!-- 开始 -->
+            <view class="weui-cell weui-cell_active">
+              <view class="weui-cell__hd"><label class="weui-label">房间描述</label></view>
+                <view class="weui-cell__bd">
+                  <input class="weui-input" placeholder="房间描述，可不填" placeholder-class="weui-input__placeholder" bindblur="roomDesc" value="{{roomDesc}}" />
+                </view>
+            </view>
+            <!-- 结尾 -->
+           
+                <view class='upload_img'>
+                  <view class='upload_img_btn'>
+                    <view class='title'>
+                      <view class='shu'></view>
+                      <text>房间照片</text>
+                    </view>
+                    <button type="primary" size="{{primarySize}}" bindtap="chooseImage" class='btn'>添加</button>
+                  </view>
+                  <view class='img_box' id='imgs' style='display:flex;justify-content: space-between;padding-top:10px;'>
+                    <!-- 存放上传的图片的盒子 -->
+                    <block wx:for="{{images}}" wx:key="*this">
+                      <view class="q-image-wrap imgs">
+                        <!-- 图片缩略图  -->
+                        <image class="q-image" src="{{item}}" mode="aspectFill" data-idx="{{index}}" bindtap="handleImagePreview"></image>
+                        <!-- 移除图片的按钮  -->
+                        <view class="q-image-remover delete" data-idx="{{index}}" bindtap="removeImage">删除</view>
+                      </view>
+                    </block>
+                  </view>
+                </view>
+
+              <view class="weui-form__opr-area">
+              <button type="primary" bindtap="upload_info" class='weui-btn weui-btn_primary'>提交</button>
+              </view>
+              <view class="weui-form__tips-area">
+                <view class="weui-form__tips">
+                          您所提交的数据，我们将严格保密
+                </view>
+              </view>
+              <view class="weui-form__extra-area">
+                <view class="weui-footer">
+                  <view class="weui-footer__links">
+                    <a href="javascript:" class="weui-footer__link">东塍镇人民政府官网</a>
+                  </view>
+                  <view class="weui-footer__text">临海东塍镇人民政府 © 2020</view>
+                </view>
+              </view>
+          </view>
+       </view>
+      </view>
+  </view>

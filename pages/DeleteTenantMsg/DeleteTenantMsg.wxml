@@ -1,0 +1,8 @@
+
+<view class='container'>
+    <text>操作成功!
+    </text>
+    <view style="height:100px;"></view>
+    <button type="primary" bindtap="returnMian" >点我返回</button>
+    <view style="height:200px;"></view>
+</view>

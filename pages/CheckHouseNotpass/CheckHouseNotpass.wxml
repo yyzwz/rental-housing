@@ -1,0 +1,7 @@
+<view class='container'>
+    <text>审核不通过成功！
+    </text>
+    <view style="height:100px;"></view>
+    <!-- <button type="primary" bindtap="returnMain" >点我返回</button> -->
+    <view style="height:200px;"></view>
+</view>

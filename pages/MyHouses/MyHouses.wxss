@@ -1,0 +1,29 @@
+.list view{font-size:12pt;}
+.list .weui-cell{padding: 5px !important}
+.container{
+  background: rgb(208, 242, 247);
+  /* border: 2rpx black solid; */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+}
+.noExistText{
+  font-size: 28px;
+}
+.checkText{
+  color: red;
+}
+.checkPassText{
+  color: rgb(38, 238, 12);
+}
+.cannot{
+  height: 35px;
+  color: grey;
+}
+.buttomm{
+  height: 35px;
+}

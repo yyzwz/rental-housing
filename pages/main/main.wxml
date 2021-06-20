@@ -1,0 +1,76 @@
+<!-- 郑为中 -->
+<!-- 主界面的HTML文件 -->
+<!-- <view class="all" style="background:url('../../statis/img/back.png');background-size:100% 100%;-moz-background-size:100% 100%;"> -->
+<view class="all" style="background-size:100% 100%;-moz-background-size:100% 100%;">
+
+  <!-- 头像区域 -->
+  <!-- <view>
+    <image class="headimg" mode="aspectFill" src='../../statis/img/main.png'></image>
+  </view>  -->
+  <view style="height:600rpx;width:100%;"></view> 
+
+  <!-- 四个大图片按钮 -->
+  <view class="section">
+    <view class="tui-table-view">
+
+          <!-- 1.房屋登记 -->
+          <view class="tui-col-3" bindtap="intent01">
+            <image src="../../statis/img/3.png" mode="aspectFit" class="icno"></image>
+            <view style="font-weight:700;color:#fff;">房屋登记</view> 
+          </view>
+
+          <!-- 2.租客登记 -->
+          <view class="tui-col-3" bindtap="intent02">
+            <image src="../../statis/img/4.png" mode="aspectFit" class="icno"></image>
+            <view style="font-weight:700;color:#fff;">租客登记</view>
+          </view>
+          
+          <!-- 3.我的房屋 -->
+          <view class="tui-col-3" bindtap="intent03">
+            <image src="../../statis/img/5.png" mode="aspectFit" class="icno"></image>
+            <view style="font-weight:700;color:#fff;">我的房屋</view>
+          </view>
+
+          <!-- 4.我的租客 -->
+          <view class="tui-col-3" bindtap="intent04">
+            <image src="../../statis/img/6.png" mode="aspectFit" class="icno"></image>
+            <view style="font-weight:700;color:#fff;">我的租客</view>
+          </view>
+
+     </view>
+  </view>
+  <!-- 登入按钮模块 -->
+  <view class='button'>
+    <!-- 如果没有获取到loginID 则显示登入 -->
+    <view wx:if="{{nameMsg==''}}">
+      <button class='btn_sub' bindgetuserinfo='btn_sub' open-type="getUserInfo" bindtap="login">
+        马上登陆
+      </button>
+    </view>
+
+    <!-- 如果获取到loginID 则显示loginID -->
+    <view wx:else>
+      <button class='btn_sub' bindgetuserinfo='btn_sub' open-type="getUserInfo" bindtap="login">
+        {{nameMsg}}
+      </button>
+    </view>
+
+  </view>
+  <!-- <view style="height:35px;"></view> -->
+
+  <!-- <view class="wei" >
+        <text class="wei">临海市东塍镇人民政府</text>
+  </view> -->
+<!-- position:fixed; bottom:0; -->
+    <view>
+          <image style="width: 750rpx;" class="footimg" mode="aspectFit" src='../../statis/img/foot.png'></image>
+    </view>
+    <!-- <view class="weui-form__extra-area">
+        <view class="weui-footer">
+          <view class="weui-footer__links">
+            <a href="javascript:" class="weui-footer__link" style="color:#ffffff">东塍镇人民政府官网</a>
+          </view>
+          <view class="weui-footer__text" style="color:#ffffff">临海东塍镇人民政府 © 2020</view>
+        </view>
+    </view> -->
+</view>

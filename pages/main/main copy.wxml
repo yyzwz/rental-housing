@@ -1,0 +1,65 @@
+<!-- 郑为中 -->
+<!-- 主界面的HTML文件 -->
+<view class="all">
+
+  <!-- 头像区域 -->
+  <view class='cont'>
+    <image class='list_img' src='{{image}}'></image>
+  </view> 
+
+  <!-- 登入按钮模块 -->
+  <view class='button'>
+    <!-- 如果没有获取到loginID 则显示登入 -->
+    <view wx:if="{{nameMsg==''}}">
+      <button type='primary' class='btn_sub' bindgetuserinfo='btn_sub' open-type="getUserInfo" bindtap="login">
+        登入
+      </button>
+    </view>
+
+    <!-- 如果获取到loginID 则显示loginID -->
+    <view wx:else>
+      <button class='btn_sub' bindgetuserinfo='btn_sub' open-type="getUserInfo" bindtap="login">
+        {{nameMsg}}
+      </button>
+    </view>
+
+  </view>
+
+  <!-- 四个大图片按钮 -->
+  <view class="section">
+    <view class="tui-table-view">
+
+          <!-- 1.房屋登记 -->
+          <view class="tui-col-3" bindtap="intent01">
+            <image src="../../statis/img/logo01.png" mode="aspectFit" class="icno"></image>
+            <view>房屋登记</view> 
+          </view>
+
+          <!-- 2.租客登记 -->
+          <view class="tui-col-3" bindtap="intent02">
+            <image src="../../statis/img/logo02.jpg" mode="aspectFit" class="icno"></image>
+            <view>租客登记</view>
+          </view>
+
+          <!-- 3.我的房屋 -->
+          <view class="tui-col-3" bindtap="intent03">
+            <image src="../../statis/img/logo03.png" mode="aspectFit" class="icno"></image>
+            <view>我的房屋</view>
+          </view>
+
+          <!-- 4.我的租客 -->
+          <view class="tui-col-3" bindtap="intent04">
+            <image src="../../statis/img/logo04.png" mode="aspectFit" class="icno"></image>
+            <view>我的租客</view>
+          </view>
+
+     </view>
+  </view>
+
+  <view style="height:35px;"></view>
+
+  <view class="wei" >
+        <text class="wei">临海市东塍镇人民政府</text>
+  </view>
+  
+</view>

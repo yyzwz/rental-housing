@@ -1,0 +1,29 @@
+<!-- 郑为中 -->
+<!-- 子界面1  用于房东提交自己的出租房 -->
+<view class='box'>
+
+  <!-- <view class="title">
+      修改房屋信息
+  </view> -->
+
+  <!-- 详细地址 -->
+  <view class="section">
+    <input placeholder="房间名称" bindblur="name" value="{{name}}" />
+  </view>
+
+  <!-- 房屋名称 -->
+  <view class="section">
+    <input type='number' placeholder="房间面积" bindblur="area" value="{{area}}" />
+  </view>
+
+  <!-- 房屋描述 -->
+  <view class="section">
+    <input placeholder="房间描述" bindblur="about" value="{{about}}" />
+  </view>
+
+  <!-- 提交按钮 -->
+  <view class='btn_box'>
+    <button type="primary" bindtap="upload_info" class='upload_info'>提交</button>
+  </view>
+  
+</view>

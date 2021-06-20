@@ -1,0 +1,7 @@
+<view class='container'>
+    <text>{{msg}}
+    </text>
+    <view style="height:100px;"></view>
+    <button type="primary" bindtap="returnMain" >点我返回</button>
+    <view style="height:150px;"></view>
+</view>

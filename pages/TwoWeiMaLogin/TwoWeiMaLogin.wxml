@@ -1,0 +1,13 @@
+<!-- 郑为中 -->
+<view class="page">
+  <view class="page__hd">
+    <!-- 标题 -->
+    <view class="page__title" style="text-align: center;">东塍镇出租房屋管理系统</view>
+    <!-- 间距 view -->
+    <view style='height:84rpx;line-height:5rpx;'></view>  
+    <!-- 副标题 -->
+    <view class="page__desc">查看该房屋信息前，请先快速登入您的账号，帮助我们核对您的身份</view>
+  </view>
+   <view style='height:84rpx;line-height:84rpx;'></view>  
+   <button type="primary" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">本机号码一键登入</button>
+</view>

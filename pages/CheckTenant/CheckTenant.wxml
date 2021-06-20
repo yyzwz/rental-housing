@@ -1,0 +1,121 @@
+<view>
+
+  <view class='container' wx:if="{{isNullMsg=='1'}}" >
+      <view style="height:100px;"></view>
+      <text class="noExistText">不存在待审核的租客
+      </text>
+      <view style="height:200px;"></view>
+  </view>
+
+  <view class="page__bd"> 
+    <view class="list">
+       
+      <view class="page__bd" wx:for="{{checkTenantsList}}" wx:key="index" wx:for-item="item" >
+          <view class="weui-cells weui-cells_after-title">
+
+              <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" >
+                  <view class="weui-cell__hd">
+                    <image src="../../statis/img/logo02.jpg" style="margin-right: 5px;vertical-align: middle;width:40px; height: 40px;"></image>
+                  </view>
+                  <view class="weui-cell__bd">
+                    租客{{index+1}}：{{item.tenantName}}
+                    <text class="checkText" >
+                            尚未审核
+                    </text>
+                    
+                  </view>
+              </navigator>
+
+              <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active"  >
+                  <view class="weui-cell__bd">
+                    <text>租客来源：{{item.tenantFromShen}}{{item.tenantFromShi}}{{item.tenantFromXian}}</text>
+                  </view>
+                  
+              </navigator>
+
+              <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active"  >
+                  <view class="weui-cell__bd">
+                    <text>租客身份证号：{{item.tenantIdentify}}</text>
+                  </view>
+                  
+              </navigator>
+
+
+              <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" >
+                  <view class="weui-cell__bd">
+                    <text>租客工作地址：{{item.tenantWorkOrganization}}</text>
+                  </view>
+              </navigator>
+
+              <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" >
+                  <view class="weui-cell__bd">
+                    <text>租客电话：{{item.tenantTel}}</text>
+                  </view>
+              </navigator>
+
+              <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" >
+                  <view class="weui-cell__bd">
+                    <text>房屋地址：{{item.houseAddress}}</text>
+                  </view>
+              </navigator>
+
+              <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" >
+                  <view class="weui-cell__bd">
+                    <text>房东姓名：{{item.houseOwnerName}}</text>
+                  </view>
+              </navigator>
+
+              <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" >
+                  <view class="weui-cell__bd">
+                    <text>房东电话：{{item.houseOwnerTel}}</text>
+                  </view>
+              </navigator>
+
+              <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" >
+                  <view class="weui-cell__bd">
+                    <text>房间名称：{{item.roomName}}</text>
+                  </view>
+              </navigator>
+
+              <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" >
+                  <view class="weui-cell__bd">
+                    <text>租借开始：{{item.startDate}}</text>
+                  </view>
+              </navigator>
+
+              <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" >
+                  <view class="weui-cell__bd">
+                    <text>租借结束：{{item.endDate}}</text>
+                  </view>
+              </navigator>
+
+              
+
+<!-- item.id就是rat关系表的ID -->
+              <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" url="../../pages/CheckTenantPass/CheckTenantPass?ratID={{item.id}}&departname={{departname}}" >
+                  <view class="weui-cell__bd">
+                    <button type="primary" >同意</button>
+                  </view>
+              </navigator>
+
+
+              <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" url="../../pages/CheckTenantNotpass/CheckTenantNotpass?ratID={{item.id}}&departname={{departname}}" >
+                  <view class="weui-cell__bd">
+                    <button type="primary" >不同意</button>
+                  </view>
+              </navigator>
+              
+
+              <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" >
+                  <view class="weui-cell__bd">
+                    <button></button>
+                  </view>
+              </navigator>
+
+
+          </view>
+
+      </view>
+    </view>
+ </view>
+</view>

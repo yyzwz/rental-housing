@@ -1,0 +1,28 @@
+
+<view class='box'>
+
+  <view class="title">
+      修改房间信息
+  </view>
+
+  <view class="section">
+    <input placeholder="房间编号" bindblur="roomId" />
+  </view>
+
+  <view class="section">
+    <input placeholder="房间名称" bindblur="roomName" />
+  </view>
+
+  <view class="section">
+    <input placeholder="房间面积" bindblur="roomArea" />
+  </view>
+
+  <view class="section">
+    <input placeholder="房间描述" bindblur="roomDesc" />
+  </view>
+
+  <view class='btn_box'>
+    <button type="primary" bindtap="upload_info" class='upload_info'>提交</button>
+  </view>
+
+</view>

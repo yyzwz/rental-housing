@@ -1,0 +1,132 @@
+<!-- 郑为中 -->
+<!-- 登入界面的HTML文件 -->
+
+<view class="page">
+
+  <view class="page__hd">
+    <!-- 标题 -->
+    <view class="page__title">东塍镇出租房屋管理系统</view>
+    <!-- 副标题 -->
+    <view class="page__desc">请提供您的相关信息，帮助我们核对您的身份</view>
+
+  </view>
+
+
+  
+   
+   <view class="section">
+
+   </view>
+
+  <!-- 登入注册滑动块模块  开始 -->
+  <view class="swiper-tab" >  
+          <view bindtap="swithNav" wx:for="{{tabCont}}" wx:key="item.index" class="swiper-tab-list {{currentTab==item.index?'active':''}}" data-current='{{item.index}}' >{{item.title}}</view>  
+  </view> 
+  <!-- 登入注册滑动块模块  结尾 -->
+
+  <swiper class="swiper-box" current="{{currentTab}}" duration="300" style="height:420px" bindchange="GetCurrentTab" data-current='6' >  
+        <swiper-item wx:for="{{tabCont}}" wx:key="item.index">  
+          
+
+
+          <view wx:if="{{item.index==0}}">
+
+                <view class="section">
+                  
+                </view>
+                <button type="primary" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">
+                    本机号码一键登入
+                </button>
+
+          </view>
+
+          <view wx:if="{{item.index==1}}">
+                  <!-- 账号 -->
+                  <view class="section">
+                    <input placeholder="登入账号" bindblur="logincode" />
+                  </view>
+
+                  <!-- 密码 -->
+                  <view class="section">
+                    <input placeholder="登入密码" bindblur="loginpassword" password="true"  />
+                  </view>
+
+                  <!-- <view class="section">
+                    <input placeholder="手机号" bindblur="logincode" />
+                  </view>
+                  <view class="section">
+                    <input placeholder="验证码" bindblur="loginpassword" password="true"  />
+                    <button type="mini">获取验证码</button>
+                  </view> -->
+                  
+                  <view class="section"></view>
+                  <!-- {{loading}} -->
+                  <!-- 提交按钮 -->
+                  <view wx:if='{{islogin==""}}' class='btn_box' >
+                  
+                    <button type="primary" bindtap="loginTo"  >登入</button>
+                  </view>
+
+                  <!-- 退出按钮 -->
+                  <view wx:else class='btn_box'>
+                    <button type="primary" bindtap="returnmain" >退出</button>
+                  </view>
+
+          </view>
+
+
+          <view wx:if="{{item.index==2}}">
+
+                <!-- 账号 -->
+                <view class="section">
+                  <input placeholder="登入账号" bindblur="code" />
+                </view>
+
+                <!-- 密码 -->
+                <view class="section">
+                  <input placeholder="登入密码" bindblur="password" password="true" />
+                </view>
+
+                <!-- 姓名 -->
+                <view class="section">
+                  <input placeholder="您的姓名" bindblur="name" />
+                </view>
+
+                <!-- 身份证号码 -->
+                <view class="section">
+                  <input placeholder="身份证号" bindblur="idcard" />
+                </view>
+
+                <!-- 地址 手动输入 -->
+                <view class="section">
+                  <input placeholder="地址" bindblur="userAddress" />
+                </view>
+
+                <!-- 描述信息 -->
+                <view class="section">
+                  <input placeholder="备注(可不填)" bindblur="desc" />
+                </view>
+
+
+                <!-- 提交按钮 -->
+                <view class="section" style="height:30px;"></view>
+                  
+                 <view wx:if='{{islogin==""}}' class='btn_box'>
+                  <button type="primary" open-type="getPhoneNumber" bindgetphonenumber="registerFirst">
+                      本机号码一键注册
+                  </button>
+                </view>
+
+                <!-- 返回按钮 -->
+                
+                <view wx:else class='btn_box'>
+                  <button type="primary" bindtap="returnmain" >退出</button>
+                </view>
+
+
+          </view>    
+        </swiper-item>  
+    </swiper>  
+<!-- <image style="position:fixed; bottom:0;width: 750rpx;" class="footimg" mode="aspectFit" src='../../statis/img/foot.png'></image> -->
+
+</view>

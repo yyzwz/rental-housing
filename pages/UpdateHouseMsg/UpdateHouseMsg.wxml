@@ -1,0 +1,46 @@
+<!-- 郑为中 -->
+<!-- 子界面1  用于房东提交自己的出租房 -->
+<view class='box'>
+
+  <!-- 下拉框 选择47个社区 -->
+  <view class="tui-picker-content">
+      <view class="tui-picker-detail">
+          <text class="textArea">您原有选择为 {{pastDepartName}}</text>
+      </view>
+      <picker bindchange="changeCun"  value="{{newVillageList.id}}" range="{{newVillageNameList}}" >
+        <view class="tui-picker-detail">所属村：{{newVillageList[inn].name}}</view>
+      </picker>
+  </view>
+
+  <view class="tui-picker-content">
+    <view class="tui-picker-detail">
+        <text class="textArea">您原有选择为 {{pastHouseTypeName}}</text>
+    </view>
+    <picker bindchange="typeChange" value="{{newHouseTypeList.id}}" range="{{newHouseTypeNameList}}">
+          <view class="tui-picker-detail">房屋类型：{{newHouseTypeList[innn].houseTypeName}}</view>
+    </picker>
+  </view>
+
+  <!-- 详细地址 -->
+  <view class="section">
+    <input placeholder="详细地址" bindblur="address" value="{{address}}" />
+  </view>
+
+  <!-- 房屋名称 -->
+  <view class="section">
+    <input placeholder="房屋名称" bindblur="name" value="{{name}}" />
+  </view>
+
+  <!-- 房屋描述 -->
+  <view class="section">
+    <input placeholder="其他补充描述" bindblur="about" value="{{about}}" />
+  </view>
+ 
+
+
+  <!-- 提交按钮 -->
+  <view class='btn_box'>
+    <button type="primary" bindtap="upload_info" class='upload_info'>提交</button>
+  </view>
+  
+</view>

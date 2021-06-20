@@ -1,0 +1,36 @@
+
+{
+  "pages": [
+    "pages/main/main",
+    "pages/Admin/Admin",
+    "pages/SetTenantMsg/SetTenantMsg",
+    "pages/AddHouse/AddHouse",
+    "pages/TwoWeiMaLogin/TwoWeiMaLogin",
+    "pages/DeleteTenantMsg/DeleteTenantMsg",
+    "pages/UpdateTenantMsg/UpdateTenantMsg",
+    "pages/MyTenantsMsg/MyTenantsMsg",
+    "pages/MyTenantsByRoom/MyTenantsByRoom",
+    "pages/PastTenantMsg/PastTenantMsg",
+    "pages/MyTenantsByHouse/MyTenantsByHouse",
+    "pages/SetTenantHouse/SetTenantHouse",
+    "pages/SetTenantRoom/SetTenantRoom",
+    "pages/MyHouses/MyHouses",
+    "pages/MyRooms/MyRooms",
+    "pages/login/login",
+    "pages/msg/msg"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarTitleText": "东塍镇出租房屋管理系统",
+    "navigationBarTextStyle": "black",
+    "navigationBarBackgroundColor": "#CCFFFF",
+    "backgroundColor": "#CCFFFF"
+  },
+  "permission": {
+    "scope.userLocation": {
+    "desc": "获取用户位置信息"
+    }
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

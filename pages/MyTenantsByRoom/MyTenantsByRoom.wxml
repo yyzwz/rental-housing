@@ -1,0 +1,48 @@
+<view>
+  
+    <view class='container' wx:if="{{isNullMsg=='1'}}" >
+        <view style="height:100px;"></view>
+        <text>该房屋不存在房间哦!
+        </text>
+        <view style="height:150px;"></view>
+    </view>
+
+  <view class="page__bd"> 
+    <view class="list">
+       
+      <view class="page__bd" wx:for="{{roomList}}" wx:key="index" wx:for-item="item" >
+          <view class="weui-cells weui-cells_after-title">
+          
+              <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" url = '../../pages/MyTenantsMsg/MyTenantsMsg?roomId={{item.id}}' >
+                  <view class="weui-cell__hd">
+                    <image src="../../statis/img/jian.jpg" style="margin-right: 5px;vertical-align: middle;width:40px; height: 40px;"></image>
+                  </view>
+                  <view class="weui-cell__bd">
+                    房间{{index+1}}：{{item.roomName}}
+                  </view>
+                  
+              </navigator>
+
+              <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" url = '../../pages/MyTenantsMsg/MyTenantsMsg?roomId={{item.id}}' >
+              
+                  <view class="weui-cell__bd">
+                    房间面积：{{item.roomArea}}
+                  </view>
+                  
+              </navigator>
+
+              <!-- <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" >
+              
+                  <view class="weui-cell__bd">
+                    <button   class='buttomm'></button>
+                  </view>
+              </navigator> -->
+
+          </view>
+          
+      </view>
+    </view>
+
+ </view>
+
+</view>

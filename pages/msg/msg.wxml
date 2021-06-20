@@ -1,0 +1,44 @@
+<view class="box" >
+  <!-- <view style="height:600rpx;width:100%;"></view>  -->
+  <view style="background-color: rgb(9,132,210);">
+       <!-- <image src="../../statis/img/msghead.png"   class="im"/> -->
+       <!-- <view style="height:10px"></view> -->
+        <view style="padding:25px;">
+        <!-- <view><text style="font-size: 20px;font-weight:900;">关于开展出租房屋登记工作的通知</text> </view> -->
+        <!-- <view style="height:10px" /> -->
+        <text>东塍镇各行政村(社)，各房屋出租人、承租人：
+        </text>
+        <view style="height:5px" />
+        <text space="ensp">    为切实做好出租房屋特别是群租房屋的疫情防控工作，有效掌握外来流动人员信息，现将有关事项通知如下：
+    一、各行政村(社)要落实属地责任，建立出租房防控体系，确保辖区内所有出租房屋、全部承租人完成相关信息登记工作，纳入防控体系。
+    二、房屋出租人要严格落实出租房屋管理主体责任，督促全部承租人向村(社)报到，房屋出租和退租必须第一时间登陆“长街安居”微信小程序，登陆东塍镇出租房屋管理系统，如实填报出租和承租人相关信息，做到出租一户一填报、退租一户一注销。
+    三、房屋出租人不得将房屋出租给持“甬行码”红码人员，原持“甬行码”红码人员一律不得进入出租房屋，并送至集中隔离点进行隔离，转为绿码后方可承租。
+    四、对于承租人瞒报、缓报、谎报健康情况等信息或阻碍疫情防控工作人员履行职务，房屋出租人不如实填报出租房屋情况，不配合镇、村(社)工作人员开展工作的，依法追究责任。
+    五、其他事项按照国家、省、市相关法律法规执行。
+    </text>
+    <text class="textright">东塍镇防疫工作领导小组办公室</text>
+    <text class="textright">2021年2月1日</text>
+            </view>
+            <!-- text-align:right -->
+    </view>
+
+
+  <radio-group class="radio-group" bindchange="radioChange">
+      <label class="radio">
+          <radio value="1" checked="{{checked}}"/>我已仔细阅读上述通知
+      </label>
+  </radio-group>
+
+
+  <view class='btn_box' style="height:50px;">
+      <button type="primary" bindtap="next" >下一步</button>
+  </view>
+  <view class="weui-form__extra-area">
+        <view class="weui-footer">
+          <view class="weui-footer__links">
+            <a href="http://www.ninghai.gov.cn/col/col111164/index.html" class="weui-footer__link">东塍镇人民政府官网</a>
+          </view>
+          <view class="weui-footer__text">临海东塍镇人民政府 © 2020</view>
+        </view>
+    </view>
+</view>

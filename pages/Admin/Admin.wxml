@@ -1,0 +1,56 @@
+<!-- 郑为中 -->
+<!-- 主界面的HTML文件 -->
+
+<view  class="all"> 
+<!-- wx:if="{{departname!=''}}" -->
+
+  <!-- 登入按钮模块 -->
+  <view class='button'>  
+        {{departname}}审核系统
+  </view>
+  <view style="height:80px;"></view>
+
+<!-- 2个大图片按钮 wx:if="{{departname!=''}}" -->
+  <view  class="section">
+    <view class="tui-table-view">
+
+          <!-- 1.房屋审核 -->
+          <view class="tui-col-3" bindtap="intent01">
+
+            <image src="../../statis/img/logo01.png" mode="aspectFit" class="icno"></image>
+            <view>房屋审核</view>
+            
+          </view>
+
+          <!-- 2.租客审核 -->
+          <view class="tui-col-3" bindtap="intent02">
+
+            <image src="../../statis/img/logo04.png" mode="aspectFit" class="icno"></image>
+            <view>租客审核</view>
+
+          </view>
+
+          <view class="tui-col-3" bindtap="intent03">
+
+            <image src="../../statis/img/5.png" mode="aspectFit" class="icno"></image>
+            <view>管辖房屋</view>
+            
+          </view>
+
+          <view class="tui-col-3" bindtap="intent04">
+
+            <image src="../../statis/img/6.png" mode="aspectFit" class="icno"></image>
+            <view>敬请期待</view>
+            
+          </view>
+     </view>
+  </view>
+  <!-- <view style="height:185px;"> -->
+      
+  <!-- </view> -->
+  <!-- <view class="wei" > -->
+        <!-- <text class="wei">临海市东塍镇人民政府</text> -->
+  <!-- </view> -->
+  <image style="position:fixed; bottom:0;width: 750rpx;" class="footimg" mode="aspectFit" src='../../statis/img/foot.png'></image>
+
+</view>

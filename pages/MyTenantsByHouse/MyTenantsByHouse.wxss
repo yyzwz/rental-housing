@@ -1,0 +1,14 @@
+.list view{font-size:12pt;}
+.list .weui-cell{padding: 5px !important}
+.checkText{
+  color: red;
+}
+.checkPassText{
+  color: rgb(38, 238, 12);
+}
+.cannot{
+  color: grey;
+}
+.noExistText{
+  font-size: 28px;
+}

@@ -1,0 +1,109 @@
+<view>
+
+  <view class='container' wx:if="{{isNullMsg=='1'}}" >
+      <view style="height:100px;"></view>
+      <text class="noExistText">不存在待审核的房屋
+      </text>
+      <view style="height:200px;"></view>
+  </view>
+
+  <view class="page__bd"> 
+    <view class="list">
+       
+      <view class="page__bd" wx:for="{{checkHouseList}}" wx:key="index" wx:for-item="item" >
+          <view class="weui-cells weui-cells_after-title">
+
+              <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" >
+                  <view class="weui-cell__hd">
+                    <image src="../../statis/img/logo01.jpg" style="margin-right: 5px;vertical-align: middle;width:40px; height: 40px;"></image>
+                  </view>
+                  <view class="weui-cell__bd">
+                    房屋{{index+1}}：{{item.houseName}}
+                    <text class="checkText" >
+                            尚未审核
+                    </text>
+                    
+                  </view>
+              </navigator>
+
+              <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active"  >
+                  <view class="weui-cell__bd">
+                    <text>房屋类型：{{item.houseTypeName}}</text>
+                  </view>
+                  
+              </navigator>
+
+              <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active"  >
+                  <view class="weui-cell__bd">
+                    <text>所属村：{{item.departmentName}}</text>
+                  </view>
+                  
+              </navigator>
+
+
+              <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" >
+                  <view class="weui-cell__bd">
+                    <text>地址：{{item.houseAddress}}</text>
+                  </view>
+              </navigator>
+
+              <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" >
+                  <view class="weui-cell__bd">
+                    <text>房屋备注：{{item.houseDesc}}</text>
+                  </view>
+              </navigator>
+
+              <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" >
+                  <view class="weui-cell__bd">
+                    <text>房东姓名：{{item.houseOwnerName}}</text>
+                  </view>
+              </navigator>
+
+              <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" >
+                  <view class="weui-cell__bd">
+                    <text>房东手机：{{item.houseOwnerTel}}</text>
+                  </view>
+              </navigator>
+
+              <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" >
+                  <view class="weui-cell__bd">
+                    <text>房东身份证：{{item.houseOwnerIdentify}}</text>
+                  </view>
+              </navigator>
+
+              <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" >
+                  <view class="weui-cell__bd">
+                    <text>房东备注：{{item.houseOwnerDesc}}</text>
+                  </view>
+              </navigator>
+
+              
+
+
+              <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" url="../../pages/CheckHousePass/CheckHousePass?houseID={{item.houseID}}" >
+                  <view class="weui-cell__bd">
+                    <button type="primary" >同意</button>
+                  </view>
+              </navigator>
+
+
+              <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" url="../../pages/CheckHouseNotpass/CheckHouseNotpass?houseID={{item.houseID}}" >
+                  <view class="weui-cell__bd">
+                    <button type="primary" >不同意</button>
+                  </view>
+              </navigator>
+              
+
+              <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" >
+                  <view class="weui-cell__bd">
+                    <button></button>
+                  </view>
+              </navigator>
+
+
+          </view>
+
+      </view>
+    </view>
+ </view>
+</view>

@@ -1,0 +1,73 @@
+.all{
+  background-color: rgb(255, 255, 255)
+}
+.wei{
+  font-size: 16px;
+  text-align: center;
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  color: rgb(26, 37, 87)
+}
+
+/* 下面两个是网格布局 */
+.tui-table-view{
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.tui-col-3{
+ flex: 0 0 auto;
+  width: 50%;
+  text-align: center;
+  color: #797979;
+  padding: 0rpx 0;
+  font-size: 35rpx;
+}
+.icno{
+  width: 120px;
+  height: 120px;
+} 
+
+/* 背景视图 */
+.cont{
+  position: relative;
+  width: 100%;
+  height: 170rpx;
+  text-align: center;
+  background-color: beige;
+}
+/* 头像 */
+.list_img{
+  position: relative;
+  top: 10%;
+  width: 144rpx;
+  height: 144rpx;
+  border-radius: 50%;
+}
+/* button外层视图 */
+.button{
+  position: relative;
+  text-align: center;
+  top: 30rpx;
+  width: 100%;
+  height: 130rpx;
+  font-size: 30px;
+  color: rgb(95, 34, 236);
+}
+/* 按钮居中 */
+.btn_sub{
+  width: 80%;
+  height: 100rpx;
+  background-color: aquamarine;
+  border: 0rpx;
+}
+.footimg{
+  width: 700px;
+  height: 50px;
+  overflow: hidden;
+  display: inline-block;
+}

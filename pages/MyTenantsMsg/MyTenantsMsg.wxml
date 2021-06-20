@@ -1,0 +1,154 @@
+<view>
+    <view class='container' wx:if="{{isNullMsg=='1'}}" >
+        <view style="height:100px;"></view>
+        <text>该房间现在没有租客！
+        </text>
+        <view style="height:200px;"></view>
+    </view>
+  <view class="page__bd"> 
+    <view class="list">
+       
+      <view class="page__bd" wx:for="{{tenantList}}" wx:key="index" wx:for-item="item" >
+          <view class="weui-cells weui-cells_after-title">
+          
+              <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active"  >
+                  <view class="weui-cell__hd">
+                    <image src="../../statis/img/logo04.png" style="margin-right: 5px;vertical-align: middle;width:40px; height: 40px;"></image>
+                  </view>
+                  <view class="weui-cell__bd">
+                    租客姓名：{{item.tenantName}}  
+                    <text wx:if="{{roomAndTenantList[index].checkOpion=='未审核'}}" class="checkText">
+                      (尚未审核)
+                    </text>
+                    <text wx:if="{{roomAndTenantList[index].checkOpion=='同意'}}" class="checkPassText">
+                      (审核通过)
+                    </text>
+                    <text wx:if="{{roomAndTenantList[index].checkOpion=='不同意'}}"  >
+                      (审核不通过)
+                    </text>
+                  </view>
+                  
+              </navigator>
+
+
+              <navigator wx:if="{{roomAndTenantList[index].isHistory=='yes'}}"  class="weui-cell weui-cell_access" hover-class="weui-cell_active" >
+              
+                  <view class="weui-cell__bd">
+                    <text class="checkText">房屋租借已结束</text>
+                  </view>
+                  
+              </navigator>
+
+              
+              <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" >
+              
+                  <view class="weui-cell__bd">
+                    租客身份证：{{item.tenantIdentify}}
+                  </view>
+                  
+              </navigator>
+
+              <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" >
+              
+                  <view class="weui-cell__bd">
+                    租客来源：{{item.tenantFromShen}}{{item.tenantFromShi}}{{item.tenantFromXian}}
+                  </view>
+                  
+              </navigator>
+
+              <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" >
+              
+                  <view class="weui-cell__bd">
+                    联系电话：{{item.tenantTel}}
+                  </view>
+                  
+              </navigator>
+
+              <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" >
+              
+                  <view class="weui-cell__bd">
+                    所在公司：{{item.tenantWorkOrganization}}
+                  </view>
+                  
+              </navigator>
+
+              <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" >
+              
+                  <view class="weui-cell__bd">
+                    开始日期：{{roomAndTenantList[index].startDateWithString}}
+                  </view>
+                  
+              </navigator>
+
+
+              <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" >
+              
+                  <view class="weui-cell__bd">
+                    结束日期：{{roomAndTenantList[index].endDateWithString}}
+                  </view>
+                  
+              </navigator>
+
+              <navigator wx:if="{{roomAndTenantList[index].checkOpion=='同意'}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active" url = '../../pages/UpdateTenantMsg/UpdateTenantMsg?tenantId={{item.id}}&roomId={{roomId}}'  >
+              
+                  <view class="weui-cell__bd">
+                    <button type="primary" class='buttomm'> 修改租客信息</button>
+                  </view>
+              </navigator>
+
+              <navigator wx:if="{{roomAndTenantList[index].checkOpion=='不同意'}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active" >
+              
+                  <view class="weui-cell__bd">
+                    <button class="cannot" > 修改租客信息</button>
+                  </view>
+              </navigator>
+
+              <navigator wx:if="{{roomAndTenantList[index].checkOpion=='未审核'}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active" >
+              
+                  <view class="weui-cell__bd">
+                    <button class="cannot" > 修改租客信息</button>
+                  </view>
+              </navigator>
+
+              <!-- 分界线 -->
+
+
+              <navigator wx:if="{{roomAndTenantList[index].checkOpion=='同意'}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active" url = '../../pages/DeleteTenantMsg/DeleteTenantMsg?tenantId={{item.id}}&roomId={{roomId}}'  >
+              
+                  <view class="weui-cell__bd">
+                    <button type="primary"  class='buttomm' bindtap="deleteTenant" > 退租</button>
+                  </view>
+              </navigator>
+
+              <navigator wx:if="{{roomAndTenantList[index].checkOpion=='未审核'}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active"  >
+              
+                  <view class="weui-cell__bd">
+                    <button type="primary" class='cannot' bindtap="deleteTenant" > 删除租借信息</button>
+                  </view>
+              </navigator>
+
+              <navigator wx:if="{{roomAndTenantList[index].checkOpion=='不同意'}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active" url = '../../pages/DeleteTenantMsg/DeleteTenantMsg?tenantId={{item.id}}&roomId={{roomId}}' >
+              
+                  <view class="weui-cell__bd">
+                    <button type="primary" class='buttomm' bindtap="deleteTenant" > 删除租借信息</button>
+                  </view>
+              </navigator>
+
+
+              <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" >
+              
+                  <view class="weui-cell__bd">
+                    <button  class='buttomm'></button>
+                  </view>
+              </navigator>
+
+          </view>
+          
+      </view>
+
+            
+    </view>
+
+ </view>
+
+</view>

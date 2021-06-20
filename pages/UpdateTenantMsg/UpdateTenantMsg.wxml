@@ -1,0 +1,53 @@
+
+
+<view class='box'>
+
+  <view class="title">
+      修改租户
+  </view>
+
+  <view class="section">
+    <input placeholder="租客姓名" bindblur="name" value="{{name}}" />
+  </view>
+
+  <view class="section">
+    <input placeholder="身份证号" bindblur="idcard" value="{{idcard}}" />
+  </view>
+  
+  <view class="section">
+    <input type='number' placeholder="电话号码" bindblur="tel" value="{{tel}}" />
+  </view>
+
+  <view class="section" >
+          <picker class="section__title" mode="region" bindchange="bindRegionChange" value="{{detailed}}" custom-item="{{customItem}}" name="detailed"  >
+            
+            <view class="picker {{clas}}" >{{detailed}}</view>
+
+          </picker>
+
+  </view>
+
+  <view class="section">
+    <input placeholder="工作单位" bindblur="work" value="{{work}}" />
+  </view>
+
+  <view class="section">
+    <picker  class="section__title" value="{{selectStartDate}}" mode="date" start="{{startDate}}" end="{{endDate}}" filed="day" bindchange="startChange" >
+      <view class="picker">开始日期{{selectStartDate}}</view>
+    </picker>
+  </view>
+
+    <view class="section">
+      <picker  class="section__title" value="{{selectEndDate}}" mode="date" start="{{startDate}}" end="{{endDate}}" filed="day" bindchange="endChange" >
+        <view class="picker">结束日期{{selectEndDate}}</view>
+      </picker>
+    </view>
+
+  <view class="section">
+    <input placeholder="备注" bindblur="desc" value="{{desc}}" />
+  </view>
+
+  <view class='btn_box'>
+    <button type="primary" bindtap="upload_info" class='upload_info'>提交</button>
+  </view>
+</view>

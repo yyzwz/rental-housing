@@ -1,0 +1,33 @@
+.list view{font-size:12pt;}
+.list .weui-cell{padding: 5px !important}
+.btn_sub{
+  background-color: rgb(206, 209, 248)
+}
+.section{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+.container{
+  background: rgb(208, 242, 247);
+  /* border: 2rpx black solid; */
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.noExistText{
+  font-size: 28px;
+}
+.buttomm{
+  height: 35px;
+}
+.aaaaa image{
+  width:300rpx;
+  height:300rpx;
+}
+.img{
+  display:flex;
+  justify-content: center; 
+}

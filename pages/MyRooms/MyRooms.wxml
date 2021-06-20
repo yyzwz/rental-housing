@@ -1,0 +1,125 @@
+<view>
+
+  <view class="page__bd"> 
+    <view class="list">
+
+      <!-- 增加房间按钮 -->
+      <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" url = '../../pages/AddRoom/AddRoom?addId={{houseID}}' >
+      
+          <view class="weui-cell__bd">
+            <button type="primary" class='btn_sub'>增加房间</button>
+          </view>
+      </navigator>
+      <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+          <view class="weui-cell__bd">
+            房东姓名：{{houseownername}}
+          </view>
+      </navigator>
+      <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+          <view class="weui-cell__bd">
+            房东电话：{{houseownertel}}
+          </view>
+      </navigator>
+      <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+          <view class="weui-cell__bd">
+            房东身份证：{{houseowneridcard}}
+          </view>
+      </navigator>
+      <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+          <view class="weui-cell__bd">
+            房东地址：{{houseowneraddress}}
+          </view>
+      </navigator>
+      <!-- 二维码 -->
+      <button type="primary" class='btn_sub' bindtap="getTwoMa" style="margin-bottom: 10px;">
+          获取房屋二维码
+      </button>
+      <view class='img' wx:if="{{haveTwoWeiMa=='1'}}" style="margin-bottom: 10px;">
+        <!-- <image class="aaaaa" src='data:image/png;base64,{{twoWeiMaImage}}'></image> -->
+        <image class="aaaaa" src='https://changjienongye.cn/forestry/static/img/houseerweima/house_{{pagehouseid}}.png'></image>
+      </view>
+      <!-- 房屋照片 -->
+      <button type="primary" class='btn_sub' bindtap="getHouseImg" style="margin-bottom: 10px;">
+          获取房屋照片
+      </button>
+      <view class='img' wx:if="{{haveHouseImg=='1'}}" style="margin-bottom: 10px;">
+            <image class="aaaaa" src='https://changjienongye.cn/forestry/static/img/houseImages/house_{{pagehouseid}}.jpg'></image>
+      </view>
+      <!-- 地图定位 -->
+      <view>
+        <map id="map" longitude="{{weidu}}" latitude="{{jingdu}}" style="width: 95%; height: 100px;">
+        </map>
+      </view>
+      
+    <button type="primary" bindtap="mapView" style="margin-top: 10px;">更新房屋定位</button>
+ 
+      <!-- 房间是否为空 -->
+      <view class='container' wx:if="{{isNullMsg=='1'}}" >
+          <view style="height:100px;"></view>
+          <text class="noExistText">该房屋不存在房间哦!</text>
+          <view style="height:150px;"></view>
+      </view>
+
+      <!-- 房间列表 -->
+      <view class="page__bd" wx:for="{{roomList}}" wx:key="index" wx:for-item="item" >
+          <view class="weui-cells weui-cells_after-title">
+          
+              <!-- 房间图标和名称 -->
+              <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" url = '../../pages/PastTenantMsg/PastTenantMsg?roomId={{item.id}}' >
+                  <view class="weui-cell__hd">
+                    <image src="../../statis/img/jian.jpg" style="margin-right: 5px;vertical-align: middle;width:40px; height: 40px;"></image>
+                  </view>
+                  <view class="weui-cell__bd">
+                    房间{{index+1}}：{{item.roomName}}
+                  </view>
+              </navigator>
+
+              <!-- 房间面积 -->
+              <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" url = '../../pages/PastTenantMsg/PastTenantMsg?roomId={{item.id}}' >
+                  <view class="weui-cell__bd">
+                    房间面积：{{item.roomArea}}
+                  </view>
+              </navigator>
+
+              <!-- 房间描述 -->
+              <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" url = '../../pages/PastTenantMsg/PastTenantMsg?roomId={{item.id}}' >
+                  <view class="weui-cell__bd">
+                    房间描述：{{item.roomDesc}}
+                  </view>
+              </navigator>
+              <button type="primary" class='btn_sub' bindtap="getRoomImg" style="margin-bottom: 10px;">
+                  获取房间照片
+              </button>
+              <view class='img' wx:if="{{haveRoomImg=='1'}}" style="margin-bottom: 10px;">
+                    <image class="aaaaa" src='https://changjienongye.cn/forestry/static/img/houseImages/room_{{item.id}}.jpg'></image>
+              </view>
+              <!-- 修改房间信息按钮 -->
+              <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" url = '../../pages/UpdateRoomMsg/UpdateRoomMsg?roomid={{item.id}}' >
+                  <view class="weui-cell__bd">
+                    <button type="primary" class='buttomm'>修改房间信息</button>
+                  </view>
+              </navigator>
+
+              <!-- 删除房间按钮 -->
+              <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" url = '../../pages/DeleteRoom/DeleteRoom?roomid={{item.id}}' >
+              
+                  <view class="weui-cell__bd">
+                    <button type="primary" class='buttomm'>删除该房间</button>
+                  </view>
+              </navigator>
+
+              <!-- 分隔区域 -->
+              <!-- <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" > -->
+                  <view class="weui-cell__bd" style="height:0px;">
+                    <!-- <button class='buttomm'></button> -->
+                  </view>
+              <!-- </navigator> -->
+
+          </view>
+          
+      </view>
+    </view>
+
+ </view>
+
+</view>

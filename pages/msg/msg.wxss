@@ -1,0 +1,28 @@
+
+.box{
+  width: 100%;
+  height: 565px;
+  background-color: rgb(9,132,210);
+}
+.im{
+  width: 100%;
+ display:flex;
+ height: 280px;
+ justify-content: center;        
+ align-items:center;
+  align-self: center;
+
+}
+.im image { 
+  width:750rpx;
+  height:200px;
+}
+text{
+  font-size: 12px;
+  font-weight:600;
+  font-family:Arial, Helvetica, sans-serif;
+}
+.textright{
+  display: flex;
+  flex-direction: row-reverse;
+}

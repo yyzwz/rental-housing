@@ -1,0 +1,179 @@
+<view>
+
+  <view class="page__bd"> 
+    <view class='container' wx:if="{{houseList.length==0}}">
+          <view style="height:100px;"></view>
+          <text class="noExistText">该账号没有下属房屋!</text>
+          <view style="height:150px;"></view>
+    </view>
+    <view class="list">
+       
+      <view class="page__bd" wx:for="{{houseList}}" wx:key="index" wx:for-item="item" >
+          <view class="weui-cells weui-cells_after-title" wx:if="{{item.checkOpion=='未审核'}}">
+              <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" >
+                  <view class="weui-cell__hd">
+                    <image src="../../statis/img/logo01.png" style="margin-right: 5px;vertical-align: middle;width:40px; height: 40px;"></image>
+                  </view>
+                  <view class="weui-cell__bd">
+                    房屋{{index+1}}：{{item.houseName}}
+                    <text class="checkText" >
+                            房屋尚未审核，无法查看租客
+                    </text>
+                    
+                  </view>
+              </navigator>
+
+
+              <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active"  >
+                  <view class="weui-cell__bd">
+                    <text class="cannot">所属村：{{item.departmentName}}</text>
+                  </view>
+                  
+              </navigator>
+
+
+              <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" >
+                  <view class="weui-cell__bd">
+                    <text class="cannot">地址：{{item.houseAddress}}</text>
+                  </view>
+              </navigator>
+
+
+              <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" url = '../../pages/UpdateHouseMsg/UpdateHouseMsg?addId={{item.id}}'  >
+                  <view class="weui-cell__bd">
+                    <button type="primary"  class='buttomm'>修改房屋信息</button>
+                  </view>
+              </navigator>
+
+
+              <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" url = '../../pages/DeleteHouse/DeleteHouse?houseID={{item.id}}' >
+                  <view class="weui-cell__bd">
+                    <button type="primary"  class='buttomm' >删除房屋</button>
+                  </view>
+              </navigator>
+              
+
+              <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" >
+                  <view class="weui-cell__bd">
+                    <button></button>
+                  </view>
+              </navigator>
+
+
+          </view>
+
+          <!-- 分界线 -->
+
+
+          <view class="weui-cells weui-cells_after-title" wx:if="{{item.checkOpion=='不同意'}}">
+              <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" >
+                  <view class="weui-cell__hd">
+                    <image src="../../statis/img/logo01.png" style="margin-right: 5px;vertical-align: middle;width:40px; height: 40px;"></image>
+                  </view>
+                  <view class="weui-cell__bd">
+                    房屋{{index+1}}：{{item.houseName}}
+                    <text class="checkText" >
+                            审核不通过，无法查看租客
+                    </text>
+                    
+                  </view>
+              </navigator>
+
+
+              <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active"  >
+                  <view class="weui-cell__bd">
+                    <text class="cannot">所属村：{{item.departmentName}}</text>
+                  </view>
+                  
+              </navigator>
+
+
+              <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" >
+                  <view class="weui-cell__bd">
+                    <text class="cannot">地址：{{item.houseAddress}}</text>
+                  </view>
+              </navigator>
+
+
+              <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" url = '../../pages/UpdateHouseMsg/UpdateHouseMsg?addId={{item.id}}' >
+                  <view class="weui-cell__bd">
+                    <button type="primary"  class='buttomm'>修改房屋信息</button>
+                  </view>
+              </navigator>
+
+
+              <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" url = '../../pages/DeleteHouse/DeleteHouse?houseID={{item.id}}' >
+                  <view class="weui-cell__bd">
+                    <button type="primary"  class='buttomm' >删除房屋</button>
+                  </view>
+              </navigator>
+              
+
+              <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" >
+                  <view class="weui-cell__bd">
+                    <button></button>
+                  </view>
+              </navigator>
+
+
+          </view>
+
+          <!-- 是否审核分界线 -->
+
+          <view class="weui-cells weui-cells_after-title" wx:if="{{item.checkOpion=='同意'}}">
+              <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" url = '../../pages/MyRooms/MyRooms?houseId={{item.id}}' >
+                  <view class="weui-cell__hd">
+                    <image src="../../statis/img/logo01.png" style="margin-right: 5px;vertical-align: middle;width:40px; height: 40px;"></image>
+                  </view>
+                  <view class="weui-cell__bd">
+                    房屋{{index+1}}：{{item.houseName}}
+                    <text class="checkPassText">
+                        审核通过
+                    </text>
+                    
+                  </view>
+              </navigator>
+
+
+              <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" url = '../../pages/MyRooms/MyRooms?houseId={{item.id}}' >
+                  <view class="weui-cell__bd">
+                    所属村：{{item.departmentName}}
+                  </view>
+                  
+              </navigator>
+
+
+              <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" url = '../../pages/MyRooms/MyRooms?houseId={{item.id}}' >
+                  <view class="weui-cell__bd">
+                    地址：{{item.houseAddress}}
+                  </view>
+              </navigator>
+
+
+              <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" url = '../../pages/UpdateHouseMsg/UpdateHouseMsg?addId={{item.id}}' >
+                  <view class="weui-cell__bd">
+                    <button type="primary"  class='buttomm'>修改房屋信息</button>
+                  </view>
+              </navigator>
+
+
+              <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" url = '../../pages/DeleteHouse/DeleteHouse?houseID={{item.id}}' >
+                  <view class="weui-cell__bd">
+                    <button type="primary" class="buttomm">删除房屋</button>
+                  </view>
+              </navigator>
+              
+
+              <navigator class="weui-cell weui-cell_access" hover-class="weui-cell_active" >
+                  <view class="weui-cell__bd">
+                    <button></button>
+                  </view>
+              </navigator>
+
+
+          </view>
+
+      </view>
+    </view>
+ </view>
+</view>
