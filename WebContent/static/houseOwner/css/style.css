@@ -1,0 +1,97 @@
+@CHARSET "UTF-8";
+
+html,body {
+	height: 100%
+}
+
+body {
+	font-family: Verdana, Arial, 宋体, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #6699FF;
+	font-size: 11px;
+}
+
+p {
+	font-family: "Verdana", "Arial", "Helvetica", "sans-serif";
+	font-size: 11px;
+	color: #006633;
+	background-color: #FFFFCC;
+	line-height: 24px;
+	text-indent: 2em;
+}
+
+.menuDiv {
+	background-color: #FFFFCC;
+	margin: 5, 5, 5, 5;
+}
+
+.title {
+	font-family: "Verdana", "Arial", "Helvetica", "sans-serif";
+	font-size: 11px;
+}
+
+p:first-line {
+	font-variant: small-caps
+}
+
+a.button {
+	background: transparent url('../images/bg_button_a.gif') no-repeat
+		scroll top right;
+	color: #444;
+	display: block;
+	font: normal 12px arial, sans-serif;
+	height: 24px;
+	margin-right: 6px;
+	padding-right: 18px; /* sliding doors padding */
+	text-decoration: none;
+}
+
+a.button span {
+	background: transparent url('../images/bg_button_span.gif') no-repeat;
+	display: block;
+	line-height: 14px;
+	padding: 5px 0 5px 18px;
+}
+
+a.button:active {
+	background-position: bottom right;
+	color: #000;
+	outline: none; /* hide dotted outline in Firefox */
+}
+
+a.button:active span {
+	background-position: bottom left;
+	padding: 6px 0 4px 18px; /* push text down 1px */
+}
+.tablecolor{
+	background-color: #FFFFCC;
+}
+.linetable {
+	background: #c2c5cc;
+	padding-left: 20px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	font-family: "Verdana", "Arial", "Helvetica", "sans-serif";
+	font-size: 11px;
+}
+.title{
+	color: #000000;
+	font-size: 11px;
+}
+.linetitle {
+	background: #e7edf7;
+	color: #000000;
+	padding-left: 5px;
+}
+
+.line0 {
+	background: #ffffff;
+	color: #000000;
+	padding-left: 5px;
+}
+.line1 {
+	background: #FFFFCC;
+	color: #000000;
+	padding-left: 5px;
+}

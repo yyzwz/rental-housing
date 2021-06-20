@@ -1,0 +1,27 @@
+1、系统是在Eclipse 4.4下开发，导入后发布到应用服务器，例如tomcat上即可运行。
+2、导入项目后请将项目编码设置为UTF-8，不是GBK。
+3、登录页面：http://localhost:8080/forestry/login.jsp， 用户名：admin 密码：123456。
+4、SQL在sql文件夹里，直接执行即可。
+5、applicationContext.xml配置文件里的mysql用户名是root，密码是123321；如果和你的不一样，请修改即可运行。
+
+二、数据库迁移：
+查看修改applicationContext.xml，AuthorityDaoImpl.java和SensorDataDaoImpl.java文件即可，里面有说明。
+
+三 、中文乱码
+在前台对中文参数用encodeURI对中文参数编码。
+var device=Ext.getCmp('cdeviceplace').getValue();
+var deviceid = encodeURI(device);//对中文参数进行编码
+posintion.store.load({
+params:{  
+deviceid:deviceid,
+starttime:Ext.Date.format(start, 'Y-m-d'),
+endtime:Ext.Date.format(end, 'Y-m-d'),
+ }  
+});
+
+在后台用URLDecoder对参数进行解码即可：
+System.out.println("deviceid="+URLDecoder.decode(deviceid, "UTF-8"));
+
+
+               
+     

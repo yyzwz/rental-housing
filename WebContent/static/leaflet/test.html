@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<style type="text/css">
+		body, html,#allmap {width: 100%;height: 100%;overflow: hidden;margin:0;font-family:"微软雅黑";}
+	</style>
+	<script type="text/javascript" src="//api.map.baidu.com/api?v=2.0&ak=859d16285fd000feec89e9032513f8bb"></script>
+	<title>根据城市名设置地图中心点</title>
+</head>
+<body>
+	<div id="allmap"></div>
+</body>
+</html>
+<script type="text/javascript">
+ 
+    //parent.window.document.getElementById('myButton').click();
+    //window.parent.say(); 
+    //alert(window.parent.location);
+	// 百度地图API功能
+	var map = new BMap.Map("allmap");  // 创建Map实例
+	
+	map.centerAndZoom(new BMap.Point(121.273766,28.931292), 15);
+	//map.centerAndZoom("宁波市政府",15);      // 初始化地图,用城市名设置地图中心点
+	
+	map.enableScrollWheelZoom();   //启用滚轮放大缩小，默认禁用
+	map.enableContinuousZoom();    //启用地图惯性拖拽，默认禁用
+	xmlHttp=new XMLHttpRequest();
+    xmlHttp.open("POST","/forestry/sys/department/getDepartmentList",true);
+    xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xmlHttp.send("start=0&limit=100000000");
+ 	
+
+    xmlHttp.onreadystatechange=function () {
+      if (xmlHttp.readyState ==4 && xmlHttp.status ==200){
+    	  var result=eval('(' + xmlHttp.responseText + ')')
+    	  var taotalNum=result.totalRecord;
+          var departments=result.data;
+          for(var i=0;i<departments.length;i++){
+        	  var department =departments[i];
+        	  console.log(department.jwd);
+        	  //var point1 = new BMap.Point(121.719823,29.253901);
+        	  jingAndWei=department.jwd.split(",");
+        	  var point1 = new BMap.Point(jingAndWei[0],jingAndWei[1]);//121.738668,29.260192
+	      	  var marker = new BMap.Marker(point1); // 创建点
+	      	  var label = new BMap.Label(department.name+"：租客人数40",{offset:new BMap.Size(20,-10)});
+	      	  marker.setLabel(label);
+	      	  marker.addEventListener("click",attribute);
+	      	  map.addOverlay(marker);    //增加点
+	      	 function attribute(){
+	    		var p = marker.getPosition();  //获取marker的位置
+	    		alert(p.lng + "," + p.lat);
+	    		parent.window.document.getElementById('myButton').click();
+	    	}
+          }
+      }
+    }
+
+	
+	
+	
+	
+	
+	
+	
+	
+</script>

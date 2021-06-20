@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans classpath:/org/springframework/beans/factory/xml/spring-beans-3.2.xsd
+				http://www.springframework.org/schema/context classpath:/org/springframework/context/config/spring-context-3.2.xsd
+				http://www.springframework.org/schema/aop classpath:/org/springframework/aop/config/spring-aop-3.2.xsd
+				http://www.springframework.org/schema/tx classpath:/org/springframework/transaction/config/spring-tx-3.2.xsd">
+
+	<context:annotation-config />
+	<context:component-scan base-package="com.forestry" />
+	<context:component-scan base-package="app.com" />
+	
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+		<property name="driverClass" value="com.mysql.jdbc.Driver" />
+		<property name="jdbcUrl" value="jdbc:mysql://127.0.0.1:3306/forestry?useUnicode=true&amp;characterEncoding=utf-8" />
+		<property name="user" value="root" />
+		<property name="password" value="123456" />
+		<!-- 
+		<property name="driverClass" value="oracle.jdbc.driver.OracleDriver" />
+		<property name="jdbcUrl" value="jdbc:oracle:thin:@127.0.0.1:1521:orcl" />
+		<property name="user" value="SYSTEM" />
+		<property name="password" value="SkyNet888999" />	
+		-->
+		<!--
+		<property name="driverClass" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
+		<property name="jdbcUrl" value="jdbc:sqlserver://localhost:1433;DatabaseName=forestry" />
+		<property name="user" value="sa" />
+		<property name="password" value="123456" />
+		-->
+		<property name="acquireIncrement" value="3" />
+		<property name="idleConnectionTestPeriod" value="120" />
+		<property name="initialPoolSize" value="3" />
+		<property name="minPoolSize" value="3" />
+		<property name="maxPoolSize" value="15" />
+		<property name="numHelperThreads" value="3" />
+		<property name="preferredTestQuery" value="select 1" />
+	</bean>
+		
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
+				<!-- <prop key="hibernate.dialect">org.hibernate.dialect.OracleDialect</prop> -->
+				<!-- <prop key="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</prop> -->
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.use_outer_join">true</prop>
+				<prop key="hibernate.jdbc.fetch_size">30</prop>
+				<prop key="hibernate.jdbc.batch_size">30</prop>
+				<prop key="hibernate.jdbc.batch_versioned_data">true</prop>
+				<prop key="hibernate.cache.use_second_level_cache">true</prop>
+				<prop key="hibernate.cache.use_query_cache">true</prop>
+				<prop key="hibernate.cache.provider_class">net.sf.ehcache.hibernate.EhCacheProvider</prop>
+				<prop key="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</prop>
+				<prop key="hibernate.current_session_context_class">org.springframework.orm.hibernate4.SpringSessionContext</prop>
+				<!-- <prop key="hibernate.hbm2ddl.auto">update</prop>-->
+				<prop key="javax.persistence.validation.mode">none</prop>
+			</props>
+		</property>
+		<property name="dataSource" ref="dataSource" />
+		<property name="packagesToScan">
+			<list>
+				<value>com.forestry.model</value> 
+				<value>app.com.model</value>   
+			</list>
+		</property>
+	</bean>
+
+	<bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<tx:annotation-driven transaction-manager="transactionManager" />
+
+</beans>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>树木位置分布</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="leaflet.css" />
+<link rel="stylesheet" href="leaflet.label.css" />
+<style type="text/css">
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	margin: 0 auto; /* 侧边的自动值与宽度结合使用，可以将布局居中对齐 */
+}
+
+.mainhead {
+	background-color: #F4F3ED;
+	position: relative;
+	float: right;
+	width: 100%;
+	height: 33px;
+	border-left: 1px solid #cacaca;
+}
+
+.main {
+	position: relative;
+	width: 100%;
+	height: 650px;
+	float: right;
+	border-left: 1px solid #cacaca;
+}
+
+.leaflet-popup-content {
+	margin: 5px;
+}
+
+.leaflet-popup-tip {
+	width: 10px;
+	height: 11px;
+}
+</style>
+<script src="leaflet.js"></script>
+<script src="leaflet.label.js"></script>
+<script src="leaflet.ajax.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="mainhead">
+			<table style="position: absolute;right:20px;top:4px;height:25px;cursor:pointer;" cellpadding="0" cellspacing="0">
+				<tr>
+					<td id="dt" style="font-size:12px;color:#868686;border: 1px solid #BDCBD3;padding:0 10px;background-color:#E6EDF1;"><a onclick="changeBoard('dt')">地图</a></td>
+					<td id="cl" style="font-size:12px;color:#868686;border: 1px solid #BDCBD3;border-left:0;padding:0 10px;"><a onclick="changeBoard('cl')">矢量</a></td>
+				</tr>
+			</table>
+		</div>
+		<div id="map" class="main"></div>
+		<script>
+			function changeBoard(id) {
+				if (id == 'dt') {
+					document.getElementById('dt').style.backgroundColor = '#E6EDF1';
+					document.getElementById('cl').style.backgroundColor = '#F4F3ED';
+					map.setView([ 111, 90 ], 2.7);
+					L.imageOverlay(imageUrl, imageBounds).addTo(map);
+				} else if (id == 'cl') {
+					document.getElementById('cl').style.backgroundColor = '#E6EDF1';
+					document.getElementById('dt').style.backgroundColor = '#F4F3ED';
+					map.setView([ 111, 90 ], 2.7);
+					L.imageOverlay(vectorImageUrl, imageBounds).addTo(map);
+				}
+			}
+
+			var map = L.map('map', {
+				maxZoom : 6,
+				minZoom : 2,
+				crs : L.CRS.Simple
+			}).setView([ 111, 90 ], 2.7);
+
+			var imageUrl = 'images/lksbig.jpg';
+			var vectorImageUrl = 'images/map2.jpg';
+			var imageBounds = [ [ 180, 0 ], [ 0, 180 ] ];
+
+			L.imageOverlay(imageUrl, imageBounds).addTo(map);
+
+			var LeafIcon = L.Icon.extend({
+				options : {
+				// shadowUrl : 'images/marker-shadow.png'
+				}
+			});
+			var temperatureIcon = new LeafIcon({
+				iconUrl : 'images/tree.png',
+				popupAnchor : [ 13, 8 ]
+			});
+
+			var popup = L.popup();
+
+			function onMapClick(e) {
+				popup.setLatLng(e.latlng).setContent("<p>" + "您点击的位置的x坐标：" + L.Util.formatNum(e.latlng.lng, 2) + "，y坐标：" + L.Util.formatNum(e.latlng.lat, 2) + "</p>").openOn(map);
+			}
+			map.on('click', onMapClick);
+
+			L.Util.ajax("/forestry/sys/sensor/getSensorLastDataWithEpcId").then(function(data) {
+				for (var i = 0; i < data.length; i++) {
+					L.marker([ data[i][2], data[i][1] ], {
+						icon : temperatureIcon
+					}).bindLabel("epc编码：" + data[i][6] + "<br/>传感器ID：" + data[i][0] + "<br/>温度：" + data[i][3] + "℃<br/>湿度：" + data[i][4] + "%<br/>光照度：" + data[i][5] + "lx<br/>x坐标：" + data[i][1] + "<br/>y坐标：" + +data[i][2], {
+						noHide : false
+					}).addTo(map);
+				}
+			});
+		</script>
+	</div>
+</body>
+</html>

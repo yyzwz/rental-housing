@@ -1,0 +1,83 @@
+.icon-user {
+	background-image: url(/forestry/static/ext/examples/shared/icons/fam/user.png) !important;
+}
+
+.icon-user-add {
+	background-image: url(/forestry/static/ext/examples/shared/icons/fam/user_add.gif) !important;
+}
+
+.icon-save {
+	background-image: url(/forestry/static/ext/examples/shared/icons/fam/save.gif) !important;
+}
+
+.icon-cancel {
+	background-image: url(/forestry/static/ext/examples/shared/icons/fam/cross.gif) !important;
+}
+
+.icon-stop {
+	background-image: url(/forestry/static/ext/examples/shared/icons/fam/stop.png) !important;
+}
+
+.icon-grid {
+	background-image: url(/forestry/static/ext/examples/shared/icons/fam/grid.png) !important;
+}
+
+.icon-add {
+	background-image: url(/forestry/static/ext/examples/shared/icons/fam/add.png) !important;
+}
+
+.icon-delete {
+	background-image: url(/forestry/static/ext/examples/shared/icons/fam/delete.png) !important;
+}
+
+.icon_edit {
+	background-image: url(/forestry/static/ext/examples/shared/icons/fam/cog_edit.png) !important;
+}
+
+.edit {
+	background-image: url(/forestry/static/ext/examples/shared/icons/fam/edit.png) !important;
+}
+
+.icon-image {
+	background-image: url(/forestry/static/ext/examples/shared/icons/fam/image_add.png) !important;
+}
+
+.icon-attach {
+	background-image: url(/forestry/static/ext/examples/shared/icons/fam/attach.png) !important;
+}
+
+.icon-accept {
+	background-image: url(/forestry/static/ext/examples/shared/icons/fam/accept.png) !important;
+}
+
+.icon-reset {
+	background-image: url(/forestry/static/ext/examples/shared/icons/fam/undo_blue.png) !important;
+}
+
+.icon-search {
+	background-image: url(/forestry/static/ext/examples/shared/icons/fam/search.png) !important;
+}
+
+.icon-excel {
+	background-image: url(/forestry/static/ext/examples/shared/icons/fam/excel.png) !important;
+}
+
+.icon-view {
+	background-image: url(/forestry/static/ext/examples/shared/icons/fam/details.gif) !important;
+}
+
+.icon-identify {
+	background-image: url(/forestry/static/ext/examples/shared/icons/fam/paintbrush.png) !important;
+}
+
+.icon-pictures {
+	background-image: url(/forestry/static/ext/examples/shared/icons/fam/pictures.png) !important;
+}
+
+.icon-disarm {
+	background-image: url(/forestry/static/ext/examples/shared/icons/fam/arrow_switch.png) !important;
+}
+
+.icon-export {
+	background-image: url(/forestry/static/ext/examples/shared/icons/fam/page_copy.png) !important;
+}
