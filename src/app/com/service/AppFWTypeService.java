@@ -7,7 +7,7 @@ import app.com.model.AppFWType;
 import core.service.Service;
 
 /**
- * @author 齐鸣鸣
+ * @author 郑为中
  */
 public interface AppFWTypeService extends Service<AppFWType> {
 

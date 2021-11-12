@@ -3,7 +3,7 @@ package com.forestry.model.sys.param;
 import core.extjs.ExtJSBaseParameter;
 
 /**
- * @author 齐鸣鸣
+ * @author 郑为中
  */
 public class HouseTypeParameter extends ExtJSBaseParameter {
 

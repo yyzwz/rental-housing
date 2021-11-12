@@ -10,7 +10,6 @@
 	<style type="text/css">
 		body, html,#allmap {width: 100%;height: 100%;overflow: hidden;margin:0;font-family:"微软雅黑";}
 	</style>
-	<!-- 东塍镇：ak=G0h3hR5oUB2NIXjaaAtKqDzVx6Zfjr2U-->
 	<script type="text/javascript" src="//api.map.baidu.com/api?v=2.0&ak=859d16285fd000feec89e9032513f8bb"></script>
 	<title>根据城市名设置地图中心点</title>
 </head>
@@ -32,7 +31,7 @@
 		// map.centerAndZoom(new BMap.Point(121.719823,29.253901), 15);//定位镇政府
 	    // 百度地图API功能
 		var map = new BMap.Map("allmap");    // 创建Map实例
-		map.centerAndZoom("宁波市政府",15);    // 初始化地图,设置中心点坐标和地图级别
+		map.centerAndZoom("镇政府",15);    // 初始化地图,设置中心点坐标和地图级别
 		//添加地图类型控件
 		map.addControl(new BMap.MapTypeControl({
 			mapTypes:[
@@ -43,15 +42,10 @@
 		map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放
 		parent.showMyTenants("<%=houseOwnerId %>","<%=houseOwnerName %>");//调用父页面的函数main.jsp
 		
-	}else{
-	    //parent.window.document.getElementById('myButton').click();
-	    //window.parent.say(); 
-	    //alert(window.parent.location);
+	}
+	else {
 		// 百度地图API功能
 		var map = new BMap.Map("allmap");  // 创建Map实例
-		
-		//map.centerAndZoom(new BMap.Point(121.719823,29.253901), 15);
-		//map.centerAndZoom("宁波市政府",15);      // 初始化地图,用城市名设置地图中心点
 		
 		map.enableScrollWheelZoom();   //启用滚轮放大缩小，默认禁用
 		map.enableContinuousZoom();    //启用地图惯性拖拽，默认禁用
@@ -70,7 +64,7 @@
 	        	  //console.log(department.id);
 	        	  //var point1 = new BMap.Point(121.719823,29.253901);
 	        	  if("<%=userGade %>"=="1级"){
-	        		  map.centerAndZoom(new BMap.Point(121.273766,28.931292), 15);//定位镇政府
+	        		  map.centerAndZoom(new BMap.Point(121.719823,29.253901), 15);//定位镇政府
 		        	  jingAndWei=department.jwd.split(",");
 		        	  var point1 = new BMap.Point(jingAndWei[0],jingAndWei[1]);//121.738668,29.260192
 			      	  var marker = new BMap.Marker(point1); // 创建点

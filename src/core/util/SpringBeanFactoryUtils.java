@@ -12,8 +12,7 @@ import org.springframework.beans.factory.BeanFactoryAware;
 import com.forestry.core.Constant;
 
 /**
- * @author Yang Tian
- * @email 1298588579@qq.com
+ * @author 郑为中
  */
 public class SpringBeanFactoryUtils implements BeanFactoryAware {
 

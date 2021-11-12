@@ -17,7 +17,7 @@ import com.forestry.model.sys.param.TenantParameter;
 import com.google.common.base.Objects;
 
 /**
- * @author 齐鸣鸣
+ * @author 郑为中
  * @房屋类型实体类
  */
 @Entity

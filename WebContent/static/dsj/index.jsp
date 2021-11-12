@@ -11,7 +11,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>宁波市租住管理大数据</title>
+    <title>出租房屋管理系统大数据</title>
 	<script src="js/jquery-2.1.1.min.js"></script>
 	<script>
 	 $(window).load(function(){  
@@ -28,7 +28,7 @@
     </div>
 <div class="data">
     <div class="data-title">
-        <div class="title-center ">宁波市租住管理大数据</div>
+        <div class="title-center ">出租房屋管理系统大数据</div>
     </div>
     <div class="data-content">
         <div class="con-left fl">

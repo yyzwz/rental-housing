@@ -7,8 +7,7 @@ import com.forestry.model.sys.Authority;
 import core.dao.Dao;
 
 /**
- * @author Yang Tian
- * @email 1298588579@qq.com
+ * @author 郑为中
  */
 public interface AuthorityDao extends Dao<Authority> {
 

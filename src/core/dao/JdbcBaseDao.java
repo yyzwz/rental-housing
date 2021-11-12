@@ -6,8 +6,7 @@ import javax.sql.DataSource;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
 
 /**
- * @author Yang Tian
- * @email 1298588579@qq.com
+ * @author 郑为中
  */
 public class JdbcBaseDao extends JdbcDaoSupport {
 

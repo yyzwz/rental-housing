@@ -17,8 +17,7 @@ import com.forestry.service.sys.RoomToTenantService;
 import core.service.BaseService;
 
 /**
- * @author Yang Tian
- * @email 1298588579@qq.com
+ * @author 郑为中
  */
 @Service
 public class RoomToTenantServiceImpl extends BaseService<RoomToTenant> implements RoomToTenantService {

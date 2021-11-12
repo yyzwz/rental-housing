@@ -5,8 +5,7 @@ import com.forestry.model.sys.SensorLastData;
 import core.service.Service;
 
 /**
- * @author Yang Tian
- * @email 1298588579@qq.com
+ * @author 郑为中
  */
 public interface SensorLastDataService extends Service<SensorLastData> {
 

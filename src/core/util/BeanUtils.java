@@ -32,8 +32,7 @@ import net.sf.json.JSONObject;
 
 
 /**
- * @author Yang Tian
- * @email 1298588579@qq.com
+ * @author 郑为中
  */
 public class BeanUtils {
 

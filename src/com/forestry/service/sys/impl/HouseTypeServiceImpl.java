@@ -17,7 +17,7 @@ import core.util.HtmlUtils;
 import core.web.SystemCache;
 
 /**
- * @author 齐鸣鸣
+ * @author 郑为中
  */
 @Service
 public class HouseTypeServiceImpl extends BaseService<HouseType> implements HouseTypeService {

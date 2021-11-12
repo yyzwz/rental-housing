@@ -11,8 +11,7 @@ import com.forestry.model.sys.Authority;
 import core.dao.BaseDao;
 
 /**
- * @author Yang Tian
- * @email 1298588579@qq.com
+ * @author 郑为中
  */
 @Repository
 public class AuthorityDaoImpl extends BaseDao<Authority> implements AuthorityDao {

@@ -33,7 +33,7 @@ import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
 /**
- * @author 齐鸣鸣
+ * @author 郑为中
  */
 @Controller
 @RequestMapping("/sys/houseType")

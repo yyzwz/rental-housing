@@ -13,9 +13,8 @@ import com.forestry.model.sys.param.DepartmentParameter;
 import com.google.common.base.Objects;
 
 /**
- * @author Yang Tian
- * @email 1298588579@qq.com
- * @部门实体类
+ * @author 郑为中
+ *  * @部门实体类
  */
 @Entity
 @Table(name = "department")

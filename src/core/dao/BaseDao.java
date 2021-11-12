@@ -36,8 +36,7 @@ import core.extjs.ExtJSBaseParameter;
 import core.support.BaseParameter;
 import core.support.QueryResult;
 /**
- * @author Yang Tian
- * @email 1298588579@qq.com
+ * @author 郑为中
  */
 public class BaseDao<E> implements Dao<E> {
 

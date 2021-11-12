@@ -39,7 +39,6 @@ Ext.define('Ext.app.PortalPanel', {
         });
     },
 
-    // Set columnWidth, and set first and last column classes to allow exact CSS targeting.
     beforeLayout: function() {
         var items = this.layout.getLayoutItems(),
             len = items.length,
@@ -69,13 +68,11 @@ Ext.define('Ext.app.PortalPanel', {
         return this.callParent(arguments);
     },
 
-    // private
     initEvents : function(){
         this.callParent();
         this.dd = Ext.create('Ext.app.PortalDropZone', this, this.dropConfig);
     },
 
-    // private
     beforeDestroy : function() {
         if (this.dd) {
             this.dd.unreg();

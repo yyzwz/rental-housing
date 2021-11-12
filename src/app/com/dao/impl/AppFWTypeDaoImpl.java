@@ -11,7 +11,7 @@ import app.com.model.AppFWType;
 import core.dao.BaseDao;
 
 /**
- * @author 齐鸣鸣
+ * @author 郑为中
  */
 @Repository
 public class AppFWTypeDaoImpl extends BaseDao<AppFWType> implements AppFWTypeDao {

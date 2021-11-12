@@ -8,8 +8,7 @@ import core.dao.Dao;
 import core.support.QueryResult;
 
 /**
- * @author Yang Tian
- * @email 1298588579@qq.com
+ * @author 郑为中
  */
 public interface SensorDao extends Dao<Sensor> {
 

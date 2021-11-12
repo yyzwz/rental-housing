@@ -20,9 +20,8 @@ import com.forestry.model.sys.param.ForestryTypeParameter;
 import com.google.common.base.Objects;
 
 /**
- * @author Yang Tian
- * @email 1298588579@qq.com
- * @树木种类信息实体类
+ * @author 郑为中
+ *  * @树木种类信息实体类
  */
 @Entity
 @Table(name = "forestry_type")

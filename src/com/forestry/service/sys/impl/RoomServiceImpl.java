@@ -17,8 +17,7 @@ import com.forestry.service.sys.RoomService;
 import core.service.BaseService;
 
 /**
- * @author Yang Tian
- * @email 1298588579@qq.com
+ * @author 郑为中
  */
 @Service
 public class RoomServiceImpl extends BaseService<Room> implements RoomService {

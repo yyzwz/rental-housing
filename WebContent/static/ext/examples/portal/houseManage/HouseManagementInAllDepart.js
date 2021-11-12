@@ -413,7 +413,7 @@ Ext.onReady(function() {
 								modal : true,
 								autoScroll : true,
 								items : [ {
-									html :  "<img src='https://changjienongye.cn/forestry/static/img/houseImages/house_"+entity.get('id')+".jpg' width=300 height=200 />"
+									html :  "<img src='/forestry/static/img/houseImages/house_"+entity.get('id')+".jpg' width=300 height=200 />"
 								} ]
 							}).show();
 						}
@@ -433,7 +433,7 @@ Ext.onReady(function() {
 						var entity = grid.getStore().getAt(rowIndex);
 						var entity = grid.getStore().getAt(rowIndex);
 						if(entity.get('houseImage')=="1")
-							globalObject.msgTip("暂无二维码");
+							globalObject.msgTip("暂无照片");
 						else{
 							new Ext.window.Window({
 								title : '二维码',
@@ -443,7 +443,7 @@ Ext.onReady(function() {
 								modal : true,
 								autoScroll : true,
 								items : [ {
-									html :  "<img src='https://changjienongye.cn/forestry/static/img/houseerweima/"+entity.get('houseTwoDimensionalCode')+"' width=300 height=300 /><center><div>" + entity.get('houseAddress')+"</div></center>"
+									html :  "<img src='/forestry/static/img/houseerweima/"+entity.get('houseTwoDimensionalCode')+"' width=300 height=300 /><center><div>" + entity.get('houseAddress')+"</div></center>"
 								
 								} ]
 							}).show();

@@ -14,9 +14,8 @@ import com.forestry.model.sys.param.MonitorLogParameter;
 import com.google.common.base.Objects;
 
 /**
- * @author Yang Tian
- * @email 1298588579@qq.com
- * @监控日志实体类
+ * @author 郑为中
+ *  * @监控日志实体类
  */
 @Entity
 @Table(name = "monitor_log")

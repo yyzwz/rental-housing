@@ -52,8 +52,7 @@ import core.util.MD5;
 import core.web.SystemCache;
 
 /**
- * @author Yang Tian
- * @email 1298588579@qq.com
+ * @author 郑为中
  */
 @Controller
 @RequestMapping("/sys/sysuser")

@@ -11,8 +11,7 @@ import core.controller.ExtJSBaseController;
 import core.extjs.ExtJSBaseParameter;
 
 /**
- * @author Yang Tian
- * @email 1298588579@qq.com
+ * @author 郑为中
  */
 public abstract class ForestryBaseController<E extends ExtJSBaseParameter> extends ExtJSBaseController<E> implements Constant {
 

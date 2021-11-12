@@ -21,9 +21,8 @@ import com.forestry.model.sys.param.SysUserParameter;
 import core.extjs.DateTimeSerializer;
 
 /**
- * @author Yang Tian
- * @email 1298588579@qq.com
- * @管理员信息实体类
+ * @author 郑为中
+ *  * @管理员信息实体类
  */
 @Entity
 @Table(name = "sys_user")

@@ -1,8 +1,3 @@
-/**
- * @class Ext.app.PortalDropZone
- * @extends Ext.dd.DropTarget
- * Internal class that manages drag/drop for {@link Ext.app.PortalPanel}.
- */
 Ext.define('Ext.app.PortalDropZone', {
     extend: 'Ext.dd.DropTarget',
 

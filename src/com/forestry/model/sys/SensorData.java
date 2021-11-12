@@ -16,9 +16,8 @@ import com.forestry.model.sys.param.SensorDataParameter;
 import com.google.common.base.Objects;
 
 /**
- * @author Yang Tian
- * @email 1298588579@qq.com
- * @传感器的温度、湿度和光照度历史数据实体类
+ * @author 郑为中
+ *  * @传感器的温度、湿度和光照度历史数据实体类
  */
 @Entity
 @Table(name = "sensor_data")

@@ -62,8 +62,7 @@ import core.util.MD5;
 import core.web.SystemCache;
 
 /**
- * @author qi mingming
- * @email 1298588579@qq.com
+ * @author 郑为中
  */
 @Controller
 @RequestMapping("/com/houseOwner")
@@ -71,10 +70,13 @@ public class HouseOwnerRegController {
 
 	@Resource
 	private HouseOwnerService houseOwnerService;
+	
 	@Resource
 	private TenantService tenantService;
+	
 	@Resource
 	private RoomService roomService;
+	
 	@Resource
 	private HouseService houseService;
 	
@@ -84,6 +86,7 @@ public class HouseOwnerRegController {
 		houseOwnerService.persist(entity);
 		response.getWriter().write("success");
 	}
+	
 	@RequestMapping("/isValidatorByFieldName")
 	public void isValidatorByFieldName(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		String filedName=(String)request.getParameter("filedName");
@@ -221,10 +224,9 @@ public class HouseOwnerRegController {
 		String[] months=BeanUtils.getLatest12Month();
 		StringBuffer tenantNumInPeriod = new StringBuffer();
 		tenantNumInPeriod.append("{");
-		//tenantNumInPeriod.append("tenantNum:[580, 490, 700,450, 550, 660, 540, 700,450, 550, 660, 540],");
 		tenantNumInPeriod.append("period:[");
 		for(int i=0;i<months.length;i++) {
-			String sql="select distinct t.id from tenant t,room_tenant rt ,room r ,house h where t.id=rt.tenantId and rt.roomId=r.id and r.houseID=h.id and rt.checkOpion='同意' and Date(rt.checkDate)<'"+months[i]+"2020-05-32' and Date(rt.endDate)>='"+months[i]+"-01'";
+			String sql="select distinct t.id from tenant t,room_tenant rt ,room r ,house h where t.id=rt.tenantId and rt.roomId=r.id and r.houseID=h.id and rt.checkOpion='同意' and Date(rt.checkDate)<'"+months[i]+"-28' and Date(rt.endDate)>='"+months[i]+"-01'";
 			TenantQuery tenantQuery = new TenantQuery();
 			List<BaseParameter> arr=tenantService.creatNativeSqlQuery(sql, tenantQuery);
 			if(months[i].equals("2020-02"))
@@ -248,7 +250,6 @@ public class HouseOwnerRegController {
 				tenantNumInPeriod.append(",");
 		}
 		tenantNumInPeriod.append("]");
-		//tenantNumInPeriod.append("period:['1月份','2月份 ','3月份 ','4月份','5月份','6月份','7月份','8月份','9月份','10月份','11月份','12月份']");
 		tenantNumInPeriod.append("}");
 		response.getWriter().write(tenantNumInPeriod.toString());
 	}
@@ -258,10 +259,9 @@ public class HouseOwnerRegController {
 		String[] months=BeanUtils.getLatest12Month();
 		StringBuffer houseNumInPeriod = new StringBuffer();
 		houseNumInPeriod.append("{");
-		//houseNumInPeriod.append("houseNum:[23, 22, 20, 30, 22,23, 22, 20, 30, 22, 30, 22],");
 		houseNumInPeriod.append("period:[");
 		for(int i=0;i<months.length;i++) {
-			String sql="select h.id from house h where h.checkOpion='同意'  and Date(h.checkDate)<'"+months[i]+"-32'";
+			String sql="select h.id from house h where h.checkOpion='同意'  and Date(h.checkDate)<'"+months[i]+"-28'";
 			HouseQuery houseQuery = new HouseQuery();
 			List<BaseParameter> arr=houseService.creatNativeSqlQuery(sql, houseQuery);
 			if(months[i].equals("2020-02"))
@@ -285,7 +285,6 @@ public class HouseOwnerRegController {
 				houseNumInPeriod.append(",");
 		}
 		houseNumInPeriod.append("]");
-		//houseNumInPeriod.append("period:['2019年1月份','2月份 ','3月份 ','4月份','5月份','6月份','7月份','8月份','9月份','10月份','11月份','12月份']");
 		houseNumInPeriod.append("}");
 		response.getWriter().write(houseNumInPeriod.toString());
 	}

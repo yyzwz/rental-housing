@@ -7,9 +7,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1" />
-		<title>房屋租赁管理系统-登入</title>
-		<link rel="stylesheet" type="text/css" href="${contextPath}/static/css/login_01.css">
-		<link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+		<title>基于Java的出租房屋管理系统</title>
 		<script type="text/javascript" src="${contextPath}/static/js/jquery-1.11.0.min.js"></script>
 		<script type="text/javascript">
 			var contextPath = "${contextPath}";
@@ -23,11 +21,11 @@
 				var $userName = document.getElementById("userName").value;
 				var $password = document.getElementById("password").value;
 				if($userName == ""){
-					$("#tip").html("请输入用户名");
+					$("#tip").html("请输入您的用户名");
 					return;
 				}
 				if($password == ""){
-					$("#tip").html("请输入密码");
+					$("#tip").html("请输入您的密码");
 					return;
 				}
 				$.ajax({
@@ -71,7 +69,7 @@
 				top: 111px;
 				width: 582px;
 				height: 296px;
-				background-image: url('static/img/111.jpg');
+				background-image: url('static/img/bg1.png');
 			}
 			
 			.inputcss-tip {
@@ -133,19 +131,36 @@
 		</style>
 	</head>
 	<body>
-		<div class="signup-form">
-            <form class="" name="form1" id="form1" method="post" action="${contextPath}/sys/user/login">
-                <h1>房屋租借管理系统</h1>
-                <input name="userName" type="text" class="txtb" id="userName" value="admin" />
-				<input name="password" type="password" class="txtb" id="password" value="123456" />
-				<div style="display:inline">
-					 <input name="userClass" type="radio" value="manager" checked="checked" style="height:20px;width:20px;display:inline"/>管理员
-					 <input name="userClass" type="radio" value="houseOwner" style="height:20px;width:20px;display:inline"/>房东
-				</div>
-                	<input type="button" onclick="javascript:login();" value="登入" class="signup-btn">
-                <a href="houseOwnerRegist.jsp">房东注册</a>
-            </form>
-        </div>
-		
+		<div id="bgcc">
+			<div id="content">
+				<form name="form1" id="form1" method="post" action="${contextPath}/sys/user/login">
+					<div id="tip" class="inputcss-tip"></div>
+					<div>
+						<input name="userName" type="text" class="inputcss-userName" id="userName" value="admin" /><br>
+						<input name="password" type="password" class="inputcss-password" id="password" value="123456" />
+						
+					</div>
+					<div class="qmm">
+						 <input name="userClass" type="radio" value="manager" checked="checked"/>管理员  &nbsp;&nbsp;
+						 <input name="userClass" type="radio" value="houseOwner"/>房东   &nbsp;&nbsp;&nbsp;
+					</div>
+					<div class="save">
+						<a href="javascript:login();"> 
+							<img src="static/img/btnlogin.png"></img>
+						</a>
+					</div>
+					<div class="reset">
+						<a href="#"> 
+							<img src="static/img/reset.png"></img>
+						</a>
+					</div>
+					<div class="qmmqmm"> 
+						<a href="houseOwnerRegist.jsp">房东注册</a> &nbsp;&nbsp;&nbsp;
+				
+					</div>
+				</form>
+			</div>
+			
+		</div>
 	</body>
 </html>

@@ -1,8 +1,7 @@
 package core.exception;
 
 /**
- * @author Yang Tian
- * @email 1298588579@qq.com
+ * @author 郑为中
  */
 public class ServiceException extends RuntimeException {
 

@@ -7,7 +7,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<title>宁波市出租房屋管理系统</title>
+		<title>基于Java的出租房屋管理系统</title>
 		
 		<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
 
@@ -29,7 +29,7 @@
 	  		var userName = '${SESSION_SYS_USER.userName}';
 	  		var globalRoleId = '${SESSION_SYS_USER.role}';
 	    	var appBaseUri = '${contextPath}';
-	    	var appName = '宁波市出租房屋管理系统';
+	    	var appName = '基于Java的出租房屋管理系统';
 	        Ext.Loader.setPath('Ext.app', '${contextPath}/static/ext/examples/portal/classes');
 	        Ext.Loader.setPath('Ext.ux', '${contextPath}/static/ext/examples/ux');
 	        Ext.Loader.setPath('Forestry.app', '${contextPath}/static/ext/examples/portal');

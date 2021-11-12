@@ -9,7 +9,7 @@ import core.service.Service;
 import core.util.HtmlUtils;
 
 /**
- * @author 齐鸣鸣
+ * @author 郑为中
  */
 public interface HouseTypeService extends Service<HouseType> {
 	List<Object[]> queryExportedHouseType(Long[] ids);

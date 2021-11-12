@@ -18,7 +18,7 @@ import com.forestry.model.sys.param.HouseOwnerParameter;
 import com.google.common.base.Objects;
 
 /**
- * @author 齐鸣鸣
+ * @author 郑为中
  * @房主类型查询实体类
  */
 

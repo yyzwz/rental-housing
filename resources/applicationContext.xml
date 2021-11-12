@@ -16,18 +16,7 @@
 		<property name="jdbcUrl" value="jdbc:mysql://127.0.0.1:3306/forestry?useUnicode=true&amp;characterEncoding=utf-8" />
 		<property name="user" value="root" />
 		<property name="password" value="123456" />
-		<!-- 
-		<property name="driverClass" value="oracle.jdbc.driver.OracleDriver" />
-		<property name="jdbcUrl" value="jdbc:oracle:thin:@127.0.0.1:1521:orcl" />
-		<property name="user" value="SYSTEM" />
-		<property name="password" value="SkyNet888999" />	
-		-->
-		<!--
-		<property name="driverClass" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
-		<property name="jdbcUrl" value="jdbc:sqlserver://localhost:1433;DatabaseName=forestry" />
-		<property name="user" value="sa" />
-		<property name="password" value="123456" />
-		-->
+		
 		<property name="acquireIncrement" value="3" />
 		<property name="idleConnectionTestPeriod" value="120" />
 		<property name="initialPoolSize" value="3" />

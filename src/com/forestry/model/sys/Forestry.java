@@ -23,9 +23,8 @@ import com.google.common.base.Objects;
 import core.extjs.DateTimeSerializer;
 
 /**
- * @author Yang Tian
- * @email 1298588579@qq.com
- * @树木信息实体类
+ * @author 郑为中
+ *  * @树木信息实体类
  */
 @Entity
 @Table(name = "forestry")

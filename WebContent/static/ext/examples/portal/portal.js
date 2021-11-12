@@ -35,7 +35,7 @@ Ext.onReady(function() {
 	var tokenDelimiter = ':';
 
 	var mainPortal = Ext.create('Ext.app.Home', {
-		title : '宁波市出租房屋总览'
+		title : '出租房屋数据总览'
 	});
 
 	mainTab = Ext.create('Ext.TabPanel', {
@@ -365,7 +365,7 @@ Ext.onReady(function() {
 				defaults : {
 					style : 'color:#fff;'
 				},
-				items : [ '->', '计算机1701 郑为中', '-', '©2021', '->', '->' ]
+				items : [ '->', '郑为中', '-', '©2021', '->', '->' ]
 			}) ]
 		} ]
 	});

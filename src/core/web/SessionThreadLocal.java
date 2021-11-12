@@ -3,8 +3,7 @@ package core.web;
 import com.forestry.model.sys.SysUser;
 
 /**
- * @author Yang Tian
- * @email 1298588579@qq.com
+ * @author 郑为中
  */
 public class SessionThreadLocal {
 

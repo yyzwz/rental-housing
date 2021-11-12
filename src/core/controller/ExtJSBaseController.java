@@ -35,8 +35,7 @@ import net.sf.json.util.CycleDetectionStrategy;
 import core.util.JsonDateValueProcessor;
 import core.util.PageUtils;
 /**
- * @author Yang Tian
- * @email 1298588579@qq.com
+ * @author 郑为中
  */
 public abstract class ExtJSBaseController<E extends ExtJSBaseParameter> {
 

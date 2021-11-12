@@ -14,7 +14,7 @@ import com.google.common.base.Objects;
 import app.com.model.param.AppFWTypeParameter;
 
 /**
- * @author 齐鸣鸣
+ * @author 郑为中
  * @房屋类型实体类
  */
 @Entity

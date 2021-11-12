@@ -7,8 +7,7 @@ import com.forestry.model.sys.MonitorLog;
 import core.dao.Dao;
 
 /**
- * @author Yang Tian
- * @email 1298588579@qq.com
+ * @author 郑为中
  */
 public interface MonitorLogDao extends Dao<MonitorLog> {
 

@@ -9,7 +9,7 @@ import com.forestry.model.sys.HouseType;
 import core.dao.Dao;
 
 /**
- * @author 齐鸣鸣
+ * @author 郑为中
  */
 public interface HouseTypeDao extends Dao<HouseType> {
 

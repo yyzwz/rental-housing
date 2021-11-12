@@ -22,9 +22,7 @@ Ext.define('Forestry.app.report.TenantAreaZZReport', {
 var dataStore_data=[];
 var modelFields_1=[];
 var departmentIds_1=[];
-var departmentNames_1=[];//['开发区','下洋涂','长街村'];
-
-//qmm_data.departmentNames=JSON.parse("['开发区','下洋涂','长街村']")
+var departmentNames_1=[];
 
 Ext.Ajax.request({
 	async: false,
@@ -36,12 +34,12 @@ Ext.Ajax.request({
     	departmentNames_1=result.departmentPart_1.departmentNames.split(",");
     	departmentIds_1=result.departmentPart_1.departmentIds.split(",");
     	modelFields_1=result.departmentPart_1.modelFields.split(",");
-    	dataStore_data_1=result.departmentPart_1.data;//result.data;
+    	dataStore_data_1=result.departmentPart_1.data;
     	
     	departmentNames_2=result.departmentPart_2.departmentNames.split(",");
     	departmentIds_2=result.departmentPart_2.departmentIds.split(",");
     	modelFields_2=result.departmentPart_2.modelFields.split(",");
-    	dataStore_data_2=result.departmentPart_2.data;//result.data;
+    	dataStore_data_2=result.departmentPart_2.data;
     },
     failure: function (response, options) {
         Ext.MessageBox.alert('失败', '请求超时或网络故障,错误编号：' + response.status);

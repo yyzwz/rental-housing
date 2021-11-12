@@ -17,7 +17,7 @@ import com.forestry.model.sys.param.RoomParameter;
 import com.google.common.base.Objects;
 
 /**
- * @author 齐鸣鸣
+ * @author 郑为中
  * @房间类型实体类
  */
 @Entity

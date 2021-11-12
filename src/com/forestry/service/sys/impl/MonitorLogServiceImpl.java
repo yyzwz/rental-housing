@@ -13,8 +13,7 @@ import com.forestry.service.sys.MonitorLogService;
 import core.service.BaseService;
 
 /**
- * @author Yang Tian
- * @email 1298588579@qq.com
+ * @author 郑为中
  */
 @Service
 public class MonitorLogServiceImpl extends BaseService<MonitorLog> implements MonitorLogService {

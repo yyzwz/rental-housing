@@ -1,6 +1,3 @@
-
-
-//树木位置标识
 Ext.define('Ext.app.Home', {
 	extend : 'Ext.panel.Panel',
 	initComponent : function() {
@@ -21,12 +18,10 @@ Ext.define('Ext.app.Home', {
 	}
 });
 
-
-// 传感器在Leaflet地图的位置标识
 Ext.define('Forestry.app.Map', {
 	extend : 'Ext.panel.Panel',
 	region : 'north',
-	title:'宁波市出租房屋GIS全貌',
+	title:'出租房屋系统GIS全貌',
 	// collapsible:true, 
 	height : '70%',
 	split : true,
@@ -36,13 +31,11 @@ Ext.define('Forestry.app.Map', {
 	}
 });
 
-
-
  Ext.define('Forestry.app.TenantInMap', {
 	id:'Forestry.app.TenantInMap',
 	extend : 'Ext.grid.Panel',
 	plain : true,
-	title:'区域出租房屋情况详情',
+	title:'各个区域出租房屋情况详情',
 	border : true,
 	region : 'center',
 	autoScroll : true,

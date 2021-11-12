@@ -8,10 +8,9 @@
                 
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/resources"/>
                 
-        <wb-resource deploy-path="/WEB-INF/classes" source-path="/test"/>
+        <property name="context-root" value="forestry"/>
                 
         <property name="java-output-path" value="/forestry/WebContent/WEB-INF/classes"/>
-        <property name="context-root" value="forestry"/>
             
     </wb-module>
     

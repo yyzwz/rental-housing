@@ -14,8 +14,7 @@ import core.service.BaseService;
 import core.support.QueryResult;
 
 /**
- * @author Yang Tian
- * @email 1298588579@qq.com
+ * @author 郑为中
  */
 @Service
 public class SensorServiceImpl extends BaseService<Sensor> implements SensorService {

@@ -10,8 +10,7 @@ import com.forestry.model.sys.SensorLastData;
 import com.forestry.service.sys.SensorLastDataService;
 
 /**
- * @author Yang Tian
- * @email 1298588579@qq.com
+ * @author 郑为中
  */
 @Controller
 @RequestMapping("/sys/sensorlastdata")

@@ -18,8 +18,7 @@ import core.dao.BaseDao;
 import core.util.QRCodeUtil;
 
 /**
- * @author Yang Tian
- * @email 1298588579@qq.com
+ * @author 郑为中
  */
 @Repository
 public class RoomDaoImpl extends BaseDao<Room> implements RoomDao {
