@@ -40,12 +40,8 @@ public class AppLoginController extends ForestryBaseController<app.com.model.App
 	 * 登入界面 使用手机号快捷登入
 	 * 
 	 * 1. 首先找 是否为管理员账号，找到则返回管理员所在村名
-	 * 
 	 * 2. 没找到 则找房东，找到则返回房东ID
-	 * 
 	 * 3. 如果都没找到 返回none
-	 * 
-	 * 郑为中
 	 */
 	@ResponseBody
 	@RequestMapping(value="/telLogin")
