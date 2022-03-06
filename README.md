@@ -1,41 +1,456 @@
-# 出租房屋管理系统
+# 基于Spring出租房屋管理系统
 
-<p align="center">
-     | | __ ___   ____ _ <br>
- _   | |/ _` \ \ / / _` |<br>
-| |__| | (_| |\ V / (_| |<br>
- \____/ \__,_| \_/ \__,_|<br>
-</p>
+![](https://img.shields.io/badge/build-passing-brightgreen) ![](https://img.shields.io/badge/progress-100%25-blue) ![](https://img.shields.io/badge/%E5%BC%80%E5%8F%91%E8%BF%9B%E5%BA%A6-100%25-success)
+
+ **本项目为基于Spring的出租房屋管理系统V1.0，采用区域网格化节点管理模式，完成流动人口的基础数据采集。在此基础上，通过后台数据的分类管理和分析，可视化展示区域流动人口数据的统计特性和关联分析结果，为各级管理部门提供可视化的结果分析，最终为区域流动人口疫情防控提供决策支持。** 
 
 
-![](https://img.shields.io/badge/build-passing-brightgreen) ![](https://img.shields.io/badge/progress-100%25-blue) ![](https://img.shields.io/badge/%E5%BC%80%E5%8F%91%E8%BF%9B%E5%BA%A6-70%25-success)
+<div align=center>
+
+<img src="https://artskyhome.com:17476/static/gitee/rental-housing/1.png" width = "900" height = "400" alt="首页" style="align:center" />
+
+</div>
+
+---
 
 ## 软件技术栈
-- 前端：ExtJs4.0（JavaScript的一个框架）,大数据展示用到echarts
+- 前端：ExtJs4.0（JavaScript的一个框架）,大数据展示用到Echarts
 - 后端：SpringBoot, JPA
 - 数据库：Mysql5.7
+- [新] 小程序： 微信小程序
 - 开发环境：Eclipse 2021-12版本，JDK17.0.1，Tomcat8.5
 - 运行配置： 内存4G及以上
 
-## 开发者在这说几句
+---
 
+## 更新日志
+
+【2022-01-27更新】 新建微信小程序端，上传至app分支，欢迎体验！
+
+微信小程序对应项目：
+
+```
+https://gitee.com/yyzwz/rental-wechat
+```
+
+
+<div align=center>
+
+<img src="https://artskyhome.com:17476/static/gitee/rental-housing/1.png" width = "900" height = "400" alt="首页" style="align:center" />
+
+</div>
+
+---
+
+## 软件介绍     
+
+<div align=center>
+
+<img src="https://artskyhome.com:17476/static/gitee/rental-wechat/14.png" width = "500" height = "400" alt="首页" style="align:center" />
+
+</div>
+
+流动人口的防疫是当前区域人口管理的重要任务。当前流动人口统计不能满足公共卫生管理、提高新冠肺炎防疫质量和水平的需要。现有的区域流动人口数据库已经遇到瓶颈,存在有效数据采集难、数据缺乏有效验证机制的和关联分析不足等问题。因此,需要通过大数据存储、计算、分析、挖掘等技术,建立一套流动人口数据采集和分析平台。
+本项目研究的防疫区域人口数据分析平台旨在运用大数据技术，实现各类基础数据、管理数据、运营数据的集中定义、集中存贮和集中使用。功能上包括，运用大数据技术，实现各类数据按照收集、准备、建模、结果、展现、归档的增值过程分级进行存储，以及实现以上功能所需的管理应用环境和技术支撑框架。平台主要为上层应用系统提供全局统一的数据综合利用及管理环境，为各类具体应用（应用子系统或子模块）提供统一的数据存储、加载、查询、分析以及展现的平台框架。
+
+<div align=center>
+
+<img src="https://artskyhome.com:17476/static/gitee/rental-housing/2.png" width = "900" height = "400" alt="首页" style="align:center" />
+
+</div>
+## 对应技术博客地址
+```
+https://zwz99.blog.csdn.net/article/details/121438195
+```
+
+---
+
+## 登陆界面：
+进入系统，首先看到登入界面，用户输入自己的账号、密码，进行登入操作。
+
+<div align=center>
+
+<img src="https://artskyhome.com:17476/static/gitee/rental-housing/3.png" width = "900" height = "400" alt="首页" style="align:center" />
+
+</div>
+
+如账号密码输入错误，提示“用户名或者密码错误”信息。用户需要再次确认输入的账号密码是否正确，重新登陆。
+
+<div align=center>
+
+<img src="https://artskyhome.com:17476/static/gitee/rental-housing/4.png" width = "900" height = "400" alt="首页" style="align:center" />
+
+</div>
+
+如果用户没有输入密码，点击登陆按钮，系统会提示“请输入您的密码”。
+
+<div align=center>
+
+<img src="https://artskyhome.com:17476/static/gitee/rental-housing/5.png" width = "900" height = "400" alt="首页" style="align:center" />
+
+</div>
+
+用户可以点击右下角的房东注册超链接，进入到房东注册模块。本系统的管理员采用超级管理员登记制，房东可以在登陆页面自行完成注册。
+
+
+<div align=center>
+
+<img src="https://artskyhome.com:17476/static/gitee/rental-housing/6.png" width = "900" height = "400" alt="首页" style="align:center" />
+
+</div>
+
+## 首页：
+
+登入成功后，进入到系统的首页，顶部是系统的标题栏，用于显示系统的名称和出租房屋系统的图标，左侧是菜单栏，用于存放用户拥有权限的菜单列表，右下角为主区域，存放了百度地图，顶部存放了某一个点位的租住详情数据
+
+
+<div align=center>
+
+<img src="https://artskyhome.com:17476/static/gitee/rental-housing/7.png" width = "900" height = "400" alt="首页" style="align:center" />
+
+</div>
+
+地图可以使用鼠标左键随意拖动，如下图所示
+
+
+<div align=center>
+
+<img src="https://artskyhome.com:17476/static/gitee/rental-housing/8.png" width = "900" height = "400" alt="首页" style="align:center" />
+
+</div>
+
+## 修改密码
+
+登入成功后，用户可以自助修改自己的密码。点击右上角的个人中心按钮，
+
+
+<div align=center>
+
+<img src="https://artskyhome.com:17476/static/gitee/rental-housing/9.png" width = "900" height = "400" alt="首页" style="align:center" />
+
+</div>
+
+再点击修改密码选项
+
+<div align=center>
+
+<img src="https://artskyhome.com:17476/static/gitee/rental-housing/10.png" width = "900" height = "400" alt="首页" style="align:center" />
+
+</div>
+
+出现修改密码弹框，用户可以再次输入自己的新密码，完成账户密码修改。
+
+<div align=center>
+
+<img src="https://artskyhome.com:17476/static/gitee/rental-housing/11.png" width = "900" height = "400" alt="首页" style="align:center" />
+
+</div>
+
+## 用户管理模块
+
+登入成功后，超级管理员可以进入用户管理模块。用户管理模块支持管理员增删改查系统的登陆用户，如姓名、手机号、角色、用户名等基础字段。
+
+<div align=center>
+
+<img src="https://artskyhome.com:17476/static/gitee/rental-housing/12.png" width = "900" height = "400" alt="首页" style="align:center" />
+
+</div>
+
+点击左上角的添加按钮，即可触发添加用户弹框。输入添加用户的用户名、密码、姓名、手机号、邮箱、区域、角色、级别后，即可完成添加操作。
+
+<div align=center>
+
+<img src="https://artskyhome.com:17476/static/gitee/rental-housing/13.png" width = "900" height = "400" alt="首页" style="align:center" />
+
+</div>
+
+点击每一行的编辑按钮，可以对用户信息进行编辑。
+
+<div align=center>
+
+<img src="https://artskyhome.com:17476/static/gitee/rental-housing/14.png" width = "900" height = "400" alt="首页" style="align:center" />
+
+</div>
+
+点击每一行的查询详情按钮，可以对用户信息进行详情查询。
+
+<div align=center>
+
+<img src="https://artskyhome.com:17476/static/gitee/rental-housing/15.png" width = "900" height = "400" alt="首页" style="align:center" />
+
+</div>
+
+点击每一行的删除按钮，可以对用户进行删除操作。
+
+<div align=center>
+
+<img src="https://artskyhome.com:17476/static/gitee/rental-housing/16.png" width = "900" height = "400" alt="首页" style="align:center" />
+
+</div>
+
+点击上方的条件查询按钮，可以对用户进行条件筛选查询。
+
+<div align=center>
+
+<img src="https://artskyhome.com:17476/static/gitee/rental-housing/17.png" width = "900" height = "400" alt="首页" style="align:center" />
+
+</div>
+
+## 权限管理模块
+
+权限管理模块用于控制超级管理员、区域管理员、房东三者的系统菜单权限。
+
+<div align=center>
+
+<img src="https://artskyhome.com:17476/static/gitee/rental-housing/18.png" width = "900" height = "400" alt="首页" style="align:center" />
+
+</div>
+
+分配权限之后，点击“保存菜单权限”按钮，即可完成权限修改。
+
+<div align=center>
+
+<img src="https://artskyhome.com:17476/static/gitee/rental-housing/19.png" width = "900" height = "400" alt="首页" style="align:center" />
+
+</div>
+
+## 资源管理模块
+
+资源管理模块用于控制系统菜单的代码位置，该模块功能面向开发者。
+
+<div align=center>
+
+<img src="https://artskyhome.com:17476/static/gitee/rental-housing/20.png" width = "900" height = "400" alt="首页" style="align:center" />
+
+</div>
+
+## 区域设置模块
+
+区域设置模块用于维护房屋可能所在的区域列表，如各个行政村、社区等数据。
+
+<div align=center>
+
+<img src="https://artskyhome.com:17476/static/gitee/rental-housing/21.png" width = "900" height = "400" alt="首页" style="align:center" />
+
+</div>
+
+用户可以点击左上方“添加”按钮，触发添加弹框，输入信息后完成添加区域操作。
+
+<div align=center>
+
+<img src="https://artskyhome.com:17476/static/gitee/rental-housing/22.png" width = "900" height = "400" alt="首页" style="align:center" />
+
+</div>
+
+用户可以点击每一行的删除按钮，完成区域的删除操作。
+
+<div align=center>
+
+<img src="https://artskyhome.com:17476/static/gitee/rental-housing/23.png" width = "900" height = "400" alt="首页" style="align:center" />
+
+</div>
+
+## 房屋类型管理模块
+
+房屋类型管理模块用于管理房屋可能存在的类型，如商品房、电梯房等。房屋类型是房屋的一个属性，也是房屋筛选条件之一。
+
+<div align=center>
+
+<img src="https://artskyhome.com:17476/static/gitee/rental-housing/24.png" width = "900" height = "400" alt="首页" style="align:center" />
+
+</div>
+
+用户可以点击“添加”按钮，完成房屋类型的添加操作。
+
+<div align=center>
+
+<img src="https://artskyhome.com:17476/static/gitee/rental-housing/25.png" width = "900" height = "400" alt="首页" style="align:center" />
+
+</div>
+
+用户可以点击每一行的删除按钮，完成房屋类型的删除。
+
+<div align=center>
+
+<img src="https://artskyhome.com:17476/static/gitee/rental-housing/26.png" width = "900" height = "400" alt="首页" style="align:center" />
+
+</div>
+
+## 房屋管理模块
+
+房屋管理模块，用于维护本系统所有的房屋数据，用户可以在此模块查询所有的房屋信息。
+
+<div align=center>
+
+<img src="https://artskyhome.com:17476/static/gitee/rental-housing/27.png" width = "900" height = "400" alt="首页" style="align:center" />
+
+</div>
+
+支持根据房屋名、区域、审核意见进行筛选查询。
+
+<div align=center>
+
+<img src="https://artskyhome.com:17476/static/gitee/rental-housing/28.png" width = "900" height = "400" alt="首页" style="align:center" />
+
+</div>
+
+支持对房屋信息进行审核操作。
+
+<div align=center>
+
+<img src="https://artskyhome.com:17476/static/gitee/rental-housing/29.png" width = "900" height = "400" alt="首页" style="align:center" />
+
+</div>
+
+点击每一行的“详情”按钮，可以对房屋详情信息进行查询。
+
+<div align=center>
+
+<img src="https://artskyhome.com:17476/static/gitee/rental-housing/30.png" width = "900" height = "400" alt="首页" style="align:center" />
+
+</div>
+
+点击每一行的“编辑”按钮，可以对房屋信息进行编辑更新。
+
+<div align=center>
+
+<img src="https://artskyhome.com:17476/static/gitee/rental-housing/31.png" width = "900" height = "400" alt="首页" style="align:center" />
+
+</div>
+
+点击每一行的“删除”按钮，可以对房屋进行删除操作。
+
+<div align=center>
+
+<img src="https://artskyhome.com:17476/static/gitee/rental-housing/32.png" width = "900" height = "400" alt="首页" style="align:center" />
+
+</div>
+
+## 房间管理模块
+
+房间是房屋的一部分，一套房屋可能存在多套房间，所以设立单独的房间管理模块。一个房间只能属于一套房屋。该模块对房间信息进行维护管理。
+
+<div align=center>
+
+<img src="https://artskyhome.com:17476/static/gitee/rental-housing/33.png" width = "900" height = "400" alt="首页" style="align:center" />
+
+</div>
+
+可以点击每一行的“详情”按钮，查询房间的详细数据。
+
+<div align=center>
+
+<img src="https://artskyhome.com:17476/static/gitee/rental-housing/34.png" width = "900" height = "400" alt="首页" style="align:center" />
+
+</div>
+
+支持根据区域和房间名进行筛选查询。
+
+<div align=center>
+
+<img src="https://artskyhome.com:17476/static/gitee/rental-housing/35.png" width = "900" height = "400" alt="首页" style="align:center" />
+
+</div>
+
+## 房东管理模块
+
+房东是房屋租借的直接参与者。一个房间只能由一个房东。该模块对房东的信息进行管理维护。
+
+<div align=center>
+
+<img src="https://artskyhome.com:17476/static/gitee/rental-housing/36.png" width = "900" height = "400" alt="首页" style="align:center" />
+
+</div>
+
+支持根据房东名、身份证号、电话号码进行条件筛选查询。
+
+<div align=center>
+
+<img src="https://artskyhome.com:17476/static/gitee/rental-housing/37.png" width = "900" height = "400" alt="首页" style="align:center" />
+
+</div>
+
+点击每一行的“删除”按钮，可以对房东进行删除操作。
+
+<div align=center>
+
+<img src="https://artskyhome.com:17476/static/gitee/rental-housing/38.png" width = "900" height = "400" alt="首页" style="align:center" />
+
+</div>
+
+## 租住审核模块
+
+房东添加租客，必须经过管理员审核才有效，管理员可以在该模块对房东提交的租住进行审核操作。
+
+<div align=center>
+
+<img src="https://artskyhome.com:17476/static/gitee/rental-housing/39.png" width = "900" height = "400" alt="首页" style="align:center" />
+
+</div>
+
+点击“详情”按钮，可以对每一个租住关系查询详细数据。
+
+<div align=center>
+
+<img src="https://artskyhome.com:17476/static/gitee/rental-housing/40.png" width = "900" height = "400" alt="首页" style="align:center" />
+
+</div>
+
+## 房屋查询模块
+
+该模块支持对房屋模块进行复杂查询，是房屋管理的一个补充模块。
+
+<div align=center>
+
+<img src="https://artskyhome.com:17476/static/gitee/rental-housing/41.png" width = "900" height = "400" alt="首页" style="align:center" />
+
+</div>
+
+## 租客查询模块
+
+该模块支持对租客模块进行复杂查询，是租客管理的一个补充模块。
+
+<div align=center>
+
+<img src="https://artskyhome.com:17476/static/gitee/rental-housing/42.png" width = "900" height = "400" alt="首页" style="align:center" />
+
+</div>
+
+## 区域房屋量化分析模块
+
+该模块对各区域的房屋、租客分布情况进行图表展示。
+
+<div align=center>
+
+<img src="https://artskyhome.com:17476/static/gitee/rental-housing/43.png" width = "900" height = "400" alt="首页" style="align:center" />
+
+</div>
+
+## 可视化大数据展示模块
+
+该模块对各区域的房屋数、租客数、新增房屋数、新增租客数、租客年龄结构、租客来源省份排行榜、房屋/租客数量趋势图进行大数据图表展示。
+
+<div align=center>
+
+<img src="https://artskyhome.com:17476/static/gitee/rental-housing/44.png" width = "900" height = "400" alt="首页" style="align:center" />
+
+</div>
+
+## 增值服务
+
+- 作者会对本仓库进行不定期更新，安装教程在最下面，若有问题可通过Issue留言。
+
+- 代码全部开源，系统安装配置运行,或是系统业务逻辑方面的问题，提供免费答疑。
+
+- 可有偿提供开题、文献等各类文档、一对一远程语音教学，支持在此基础上继续定制开发。
+
+- 可根据您的需求，有偿定制任何管理系统，毕设难度一般不超过400R，中大型项目可对公签合同，如有需求欢迎联系Q 916077357
 - 由于大三有一门前端课，老师教了ExtJS，当时我还没有接触过框架，甚至还没有学过 JavaScript。但老师的讲解激起了我强大的兴趣，于是在老师提供的demo上不断试探修改，最终成就了这个项目。     
 - 当然了，ExtJS也是一门过气的前端框架了（个人观点勿喷），建议还是学习Vue。     
 - 当时开发工具是Eclipse，后面尝试转过idea，但稳定性堪忧，还是放弃了。     
-- 这个项目也是一个老古董了，是我起早贪黑开发的第一个真实项目，记录着我大学的点点滴滴。     
-- 可以用来当毕设，文案我都准备好了；但不建议用于生产环境，因为ExtJS的可扩展性不高，没有Vue好用。     
-- 如果对本项目有想法的，或者无法运行的，随时都可以联系我，但是不是应该Star一下？！     
+- 这个项目也是一个老古董了，是我起早贪黑开发的第一个真实项目，记录着我大学的点点滴滴。 
 
-## 软件介绍    
- **本项目为基于Java的出租房屋管理系统V1.0，采用区域网格化节点管理模式，完成流动人口的基础数据采集。在此基础上，通过后台数据的分类管理和分析，可视化展示区域流动人口数据的统计特性和关联分析结果，为各级管理部门提供可视化的结果分析，最终为区域流动人口疫情防控提供决策支持。**     
-流动人口的防疫是当前区域人口管理的重要任务。当前流动人口统计不能满足公共卫生管理、提高新冠肺炎防疫质量和水平的需要。现有的区域流动人口数据库已经遇到瓶颈,存在有效数据采集难、数据缺乏有效验证机制的和关联分析不足等问题。因此,需要通过大数据存储、计算、分析、挖掘等技术,建立一套流动人口数据采集和分析平台。
-本项目研究的防疫区域人口数据分析平台旨在运用大数据技术，实现各类基础数据、管理数据、运营数据的集中定义、集中存贮和集中使用。功能上包括，运用大数据技术，实现各类数据按照收集、准备、建模、结果、展现、归档的增值过程分级进行存储，以及实现以上功能所需的管理应用环境和技术支撑框架。平台主要为上层应用系统提供全局统一的数据综合利用及管理环境，为各类具体应用（应用子系统或子模块）提供统一的数据存储、加载、查询、分析以及展现的平台框架  
-![图表分析](https://images.gitee.com/uploads/images/2021/1112/105314_ea03340f_7525468.png "图表分析B.png")
-
-## 博客说明    
-
-https://zwz99.blog.csdn.net/article/details/121438195
-
+---
 
 ## 项目背景    
 随着物联网、社交网络、云计算等技术不断融入我们的生活以及现有的计算能力、存储空间、网络带宽的高速发展，人类积累的数据在互联网、通信、金融、商业、医疗等诸多领域不断地增长和累积。在当前疫情防控的关键时期，内防扩散、外防输出的任务仍然严峻。在人群密集的公共场所，传统人工近距离检测与发热筛查，可能会导致人员排队、聚集等情况，容易扩大疫情传播风险;此外，面对大量疫情数据信息，如何进行高效收集、汇总与筛查，也是疫情防控面临的挑战….因此，运用大数据进行疫情数据统计分析、对流动人员进行疫情监测、支撑服务疫情态势研判、疫情防控部署迫在眉睫。在现实情况的背景下，人们意识到面对大量疫情数据信息时首要的就是有效地监测防疫区域人流量数据。在这一过程中有两个最重要的任务。一是实时性，如此海量的数据规模需要实时分析并迅速反馈结果。二是准确性，需要我们从海量的数据中精准提取出隐含在其中的流动人口的有价值信息，再将挖掘所得到的信息转化成有组织的知识以模型等方式表示出来，从而将分析模型应用到现实生活中提高疫情防控决策方案等。  
@@ -83,204 +498,6 @@ https://zwz99.blog.csdn.net/article/details/121438195
 更具体一步说，该平台也是对群众负责的体现。政府和社会通过该平台加强防疫、减少经济损失，一定程度上对群众有着生命安全和经济上的保护，对于群众来说无疑是一件好事。
 
 
-## 登陆界面：
-进入系统，首先看到登入界面，用户输入自己的账号、密码，进行登入操作。
-![输入图片说明](https://images.gitee.com/uploads/images/2021/1112/105804_adcebbbb_7525468.png "登入页面.png")
-
-如账号密码输入错误，提示“用户名或者密码错误”信息。用户需要再次确认输入的账号密码是否正确，重新登陆。
-
-![输入图片说明](https://images.gitee.com/uploads/images/2021/1112/105915_396942f4_7525468.png "1.png")
-
-如果用户没有输入密码，点击登陆按钮，系统会提示“请输入您的密码”。
-
-![输入图片说明](https://images.gitee.com/uploads/images/2021/1112/110010_c883d43b_7525468.png "2.png")
-
-用户可以点击右下角的房东注册超链接，进入到房东注册模块。本系统的管理员采用超级管理员登记制，房东可以在登陆页面自行完成注册。
-
-![输入图片说明](https://images.gitee.com/uploads/images/2021/1112/110100_14859419_7525468.png "3.png")
-
-## 首页：
-
-登入成功后，进入到系统的首页，顶部是系统的标题栏，用于显示系统的名称和出租房屋系统的图标，左侧是菜单栏，用于存放用户拥有权限的菜单列表，右下角为主区域，存放了百度地图，顶部存放了某一个点位的租住详情数据
-
-![输入图片说明](https://images.gitee.com/uploads/images/2021/1112/110133_8e08cb1c_7525468.png "4.png")
-
-地图可以使用鼠标左键随意拖动，如下图所示
-
-![输入图片说明](https://images.gitee.com/uploads/images/2021/1112/110156_ac0620be_7525468.png "5.png")
-
-## 修改密码
-
-登入成功后，用户可以自助修改自己的密码。点击右上角的个人中心按钮，
-
-![输入图片说明](https://images.gitee.com/uploads/images/2021/1112/110225_5d6e07d6_7525468.png "6.png")
-
-再点击修改密码选项
-
-![输入图片说明](https://images.gitee.com/uploads/images/2021/1112/110245_31331e9f_7525468.png "7.png")
-
-出现修改密码弹框，用户可以再次输入自己的新密码，完成账户密码修改。
-
-![输入图片说明](https://images.gitee.com/uploads/images/2021/1112/110303_789ceca2_7525468.png "8.png")
-
-## 用户管理模块
-
-登入成功后，超级管理员可以进入用户管理模块。用户管理模块支持管理员增删改查系统的登陆用户，如姓名、手机号、角色、用户名等基础字段。
-
-![输入图片说明](https://images.gitee.com/uploads/images/2021/1112/110332_019d8412_7525468.png "9.png")
-
-点击左上角的添加按钮，即可触发添加用户弹框。输入添加用户的用户名、密码、姓名、手机号、邮箱、区域、角色、级别后，即可完成添加操作。
-
-![输入图片说明](https://images.gitee.com/uploads/images/2021/1112/110349_f838f6e0_7525468.png "10.png")
-
-点击每一行的编辑按钮，可以对用户信息进行编辑。
-
-![输入图片说明](https://images.gitee.com/uploads/images/2021/1112/110407_71a97ff4_7525468.png "11.png")
-
-点击每一行的查询详情按钮，可以对用户信息进行详情查询。
-
-![输入图片说明](https://images.gitee.com/uploads/images/2021/1112/110428_37462b33_7525468.png "12.png")
-
-点击每一行的删除按钮，可以对用户进行删除操作。
-
-![输入图片说明](https://images.gitee.com/uploads/images/2021/1112/110448_64dfca6d_7525468.png "13.png")
-
-点击上方的条件查询按钮，可以对用户进行条件筛选查询。
-
-![输入图片说明](https://images.gitee.com/uploads/images/2021/1112/110508_a9a1691a_7525468.png "14.png")
-
-
-## 权限管理模块
-
-权限管理模块用于控制超级管理员、区域管理员、房东三者的系统菜单权限。
-
-![输入图片说明](https://images.gitee.com/uploads/images/2021/1112/110531_697d3dcd_7525468.png "15.png")
-
-分配权限之后，点击“保存菜单权限”按钮，即可完成权限修改。
-
-![输入图片说明](https://images.gitee.com/uploads/images/2021/1112/110549_e58e38f4_7525468.png "16.png")
-
-## 资源管理模块
-
-资源管理模块用于控制系统菜单的代码位置，该模块功能面向开发者。
-
-![输入图片说明](https://images.gitee.com/uploads/images/2021/1112/110611_1a942880_7525468.png "17.png")
-
-## 区域设置模块
-
-区域设置模块用于维护房屋可能所在的区域列表，如各个行政村、社区等数据。
-
-![输入图片说明](https://images.gitee.com/uploads/images/2021/1112/110655_3267a705_7525468.png "18.png")
-
-用户可以点击左上方“添加”按钮，触发添加弹框，输入信息后完成添加区域操作。
-
-![输入图片说明](https://images.gitee.com/uploads/images/2021/1112/110715_39da9553_7525468.png "19.png")
-
-用户可以点击每一行的删除按钮，完成区域的删除操作。
-
-![输入图片说明](https://images.gitee.com/uploads/images/2021/1112/110746_9786672d_7525468.png "20.png")
-
-## 房屋类型管理模块
-
-房屋类型管理模块用于管理房屋可能存在的类型，如商品房、电梯房等。房屋类型是房屋的一个属性，也是房屋筛选条件之一。
-
-![输入图片说明](https://images.gitee.com/uploads/images/2021/1112/110811_319e448f_7525468.png "21.png")
-
-用户可以点击“添加”按钮，完成房屋类型的添加操作。
-
-![输入图片说明](https://images.gitee.com/uploads/images/2021/1112/110830_650f7994_7525468.png "22.png")
-
-用户可以点击每一行的删除按钮，完成房屋类型的删除。
-
-![输入图片说明](https://images.gitee.com/uploads/images/2021/1112/110845_35ca1daa_7525468.png "23.png")
-
-## 房屋管理模块
-
-房屋管理模块，用于维护本系统所有的房屋数据，用户可以在此模块查询所有的房屋信息。
-
-![输入图片说明](https://images.gitee.com/uploads/images/2021/1112/110913_ca8c4343_7525468.png "24.png")
-
-支持根据房屋名、区域、审核意见进行筛选查询。
-
-![输入图片说明](https://images.gitee.com/uploads/images/2021/1112/110928_516a6557_7525468.png "25.png")
-
-支持对房屋信息进行审核操作。
-
-![输入图片说明](https://images.gitee.com/uploads/images/2021/1112/110945_db4592a3_7525468.png "26.png")
-
-点击每一行的“详情”按钮，可以对房屋详情信息进行查询。
-
-![输入图片说明](https://images.gitee.com/uploads/images/2021/1112/111000_da8221c8_7525468.png "27.png")
-
-点击每一行的“编辑”按钮，可以对房屋信息进行编辑更新。
-
-![输入图片说明](https://images.gitee.com/uploads/images/2021/1112/111022_d96d0d74_7525468.png "28.png")
-
-点击每一行的“删除”按钮，可以对房屋进行删除操作。
-
-![输入图片说明](https://images.gitee.com/uploads/images/2021/1112/122125_a253987e_7525468.png "29.png")
-
-## 房间管理模块
-
-房间是房屋的一部分，一套房屋可能存在多套房间，所以设立单独的房间管理模块。一个房间只能属于一套房屋。该模块对房间信息进行维护管理。
-
-![输入图片说明](https://images.gitee.com/uploads/images/2021/1112/122141_3017d667_7525468.png "30.png")
-
-可以点击每一行的“详情”按钮，查询房间的详细数据。
-
-![输入图片说明](https://images.gitee.com/uploads/images/2021/1112/122158_38c72085_7525468.png "31.png")
-
-支持根据区域和房间名进行筛选查询。
-
-![输入图片说明](https://images.gitee.com/uploads/images/2021/1112/122211_cf49ab09_7525468.png "32.png")
-
-## 房东管理模块
-
-房东是房屋租借的直接参与者。一个房间只能由一个房东。该模块对房东的信息进行管理维护。
-
-![输入图片说明](https://images.gitee.com/uploads/images/2021/1112/122233_e30b3a14_7525468.png "33.png")
-
-支持根据房东名、身份证号、电话号码进行条件筛选查询。
-
-![输入图片说明](https://images.gitee.com/uploads/images/2021/1112/122251_4f81f118_7525468.png "34.png")
-
-点击每一行的“删除”按钮，可以对房东进行删除操作。
-
-![输入图片说明](https://images.gitee.com/uploads/images/2021/1112/122306_a131b855_7525468.png "35.png")
-
-## 租住审核模块
-
-房东添加租客，必须经过管理员审核才有效，管理员可以在该模块对房东提交的租住进行审核操作。
-
-![输入图片说明](https://images.gitee.com/uploads/images/2021/1112/122321_821a6bb0_7525468.png "36.png")
-
-点击“详情”按钮，可以对每一个租住关系查询详细数据。
-
-![输入图片说明](https://images.gitee.com/uploads/images/2021/1112/122336_2dbd896d_7525468.png "37.png")
-
-## 房屋查询模块
-
-该模块支持对房屋模块进行复杂查询，是房屋管理的一个补充模块。
-
-![输入图片说明](https://images.gitee.com/uploads/images/2021/1112/122350_7e5cc4d3_7525468.png "38.png")
-
-## 租客查询模块
-
-该模块支持对租客模块进行复杂查询，是租客管理的一个补充模块。
-
-![输入图片说明](https://images.gitee.com/uploads/images/2021/1112/122403_1afe015a_7525468.png "39.png")
-
-## 区域房屋量化分析模块
-
-该模块对各区域的房屋、租客分布情况进行图表展示。
-
-![输入图片说明](https://images.gitee.com/uploads/images/2021/1112/122422_bb47e220_7525468.png "40.png")
-
-## 可视化大数据展示模块
-
-该模块对各区域的房屋数、租客数、新增房屋数、新增租客数、租客年龄结构、租客来源省份排行榜、房屋/租客数量趋势图进行大数据图表展示。
-
-![输入图片说明](https://images.gitee.com/uploads/images/2021/1112/122434_0a166e14_7525468.png "41.png")
 
 ## 安装    
 
@@ -295,36 +512,66 @@ git clone https://gitee.com/yyzwz/rental-housing.git
 
 ## 导入配置项目
 
-![输入图片说明](https://images.gitee.com/uploads/images/2021/0618/144535_d5ff7fc2_7525468.png "111.png")
+<div align=center>
 
-![输入图片说明](https://images.gitee.com/uploads/images/2021/0618/144541_f487609d_7525468.png "222.png")
+<img src="https://artskyhome.com:17476/static/gitee/rental-housing/45.png" width = "600" height = "400" alt="首页" style="align:center" />
+
+</div>
+
+<div align=center>
+
+<img src="https://artskyhome.com:17476/static/gitee/rental-housing/46.png" width = "400" height = "400" alt="首页" style="align:center" />
+
+</div>
 
 检查Tomcat配置是否正常
 
-![输入图片说明](https://images.gitee.com/uploads/images/2021/1112/122524_c06dcfcb_7525468.png "101.png")
+<div align=center>
+
+<img src="https://artskyhome.com:17476/static/gitee/rental-housing/47.png" width = "600" height = "400" alt="首页" style="align:center" />
+
+</div>
 
 检查IDE编码是否为UTF-8
 
-![输入图片说明](https://images.gitee.com/uploads/images/2021/1112/122540_31e67520_7525468.png "102.png")
+<div align=center>
+
+<img src="https://artskyhome.com:17476/static/gitee/rental-housing/48.png" width = "550" height = "400" alt="首页" style="align:center" />
+
+</div>
 
 检查项目环境配置是否正常
 
-![输入图片说明](https://images.gitee.com/uploads/images/2021/0618/144547_13ba12ce_7525468.png "333.png")
+<div align=center>
+
+<img src="https://artskyhome.com:17476/static/gitee/rental-housing/49.png" width = "600" height = "400" alt="首页" style="align:center" />
+
+</div>
 
 ## 启动项目
 
-![输入图片说明](https://images.gitee.com/uploads/images/2021/1112/122559_141a7a59_7525468.png "103.png")
+<div align=center>
 
-稍等30秒后，系统运行成功
+<img src="https://artskyhome.com:17476/static/gitee/rental-housing/50.png" width = "500" height = "400" alt="首页" style="align:center" />
 
-![输入图片说明](https://images.gitee.com/uploads/images/2021/1112/122654_eaf402fd_7525468.png "104.png")
+</div>
 
+稍等30秒，系统运行成功
+
+<div align=center>
+
+<img src="https://artskyhome.com:17476/static/gitee/rental-housing/51.png" width = "900" height = "400" alt="首页" style="align:center" />
+
+</div>
+
+---
 
 ## 说明
 
 1. 本项目开源，遵循GPL-3.0开源协议，二次开发请注明原项目的来源，不允许直接转售。
 2. 作者拥有本软件构建后的应用系统全部内容所有权及独立的知识产权。
 3. 如有问题，欢迎在仓库评论区留言，看到后会第一时间回复。相关意见会酌情考虑，但没有一定被采纳的承诺或保证。
+4. Github同步地址 https://github.com/yyzwz/rental-housing ,但会以GitEE更新为主。
 
 ## 免责声明
 
